@@ -15,7 +15,7 @@ namespace WalletWasabi.Backend.Controllers
 	/// To acquire offchain data.
 	/// </summary>
 	[Produces("application/json")]
-	[Route("api/v" + Constants.BackendMajorVersion + "/btc/[controller]")]
+	[Route("api/v" + Constants.BackendMajorVersion + "/ltc/[controller]")]
 	public class OffchainController : Controller
 	{
 		public OffchainController(IMemoryCache memoryCache, IExchangeRateProvider exchangeRateProvider)
