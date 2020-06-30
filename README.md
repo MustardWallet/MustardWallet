@@ -21,7 +21,7 @@ Mustard Wallet specific documentation can be found on [Mustard Wallet's GitHub P
 
 ![](https://i.imgur.com/Y9fwGmQ.png)
 
-For step by step instructions of PGP verification and package installation, see the [documentation](https://docs.wasabiwallet.io/using-wasabi/InstallPackage.html)
+For step by step instructions package installation instructions, see the [documentation](https://docs.wasabiwallet.io/using-wasabi/InstallPackage.html)
 
 # Build From Source Code
 
