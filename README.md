@@ -1,4 +1,4 @@
-[Mustard Wallet for Litecoin](https://mustardwallet.com) is an open-source, non-custodial, privacy-focused Litecoin wallet for desktop, that implements [Chaumian CoinJoin](https://github.com/nopara73/ZeroLink/#ii-chaumian-coinjoin). Based on Wasabi Wallet for Bitcoin .
+[Mustard Wallet for Litecoin](https://MustardWallet.com) is an open-source, non-custodial, privacy-focused Litecoin wallet for desktop, that implements [Chaumian CoinJoin](https://github.com/nopara73/ZeroLink/#ii-chaumian-coinjoin). Based on Wasabi Wallet for Bitcoin .
 
 The main privacy features on the network level:
 - Tor-only by default.
