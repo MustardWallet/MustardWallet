@@ -1,0 +1,13 @@
+How to use
+==========
+
+Use sha256sum to compute the SHA-256 Hash of your file and compare it with the ones below .
+
+Release v0.1.5.0
+----------------
+
+f9f8699302396f5ad02d2dea63bc81ed965a03da10b462015307b9cce91f4017  MustardWalletLTC-0.1.5.0.msi
+b23a68ac99e783ecd62de9b3887ae3432d54478b5059c1df43c5fd3d8dc23683  MustardWalletLTC-0.1.5.deb
+187f1b99faf9f494d380c672cab0d75b17da4ac9172f95e349541711fb81faea  MustardWalletLTC-linux-0.1.5.tar.gz
+a93ea8fac72d70c24234ce7180bbbce79159aaa272d3683e52706ccee4f8c368  MustardWalletLTC-osx-0.1.5.zip
+
