@@ -10,7 +10,7 @@ using WalletWasabi.Legal;
 namespace WalletWasabi.Backend.Controllers
 {
 	/// <summary>
-	/// To acquire Wasabi software related data.
+	/// To acquire Mustard Wallet software related data.
 	/// </summary>
 	[Produces("application/json")]
 	[Route("api/v" + Constants.BackendMajorVersion + "/[controller]")]

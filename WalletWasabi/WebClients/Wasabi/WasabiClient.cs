@@ -76,11 +76,7 @@ namespace WalletWasabi.WebClients.Wasabi
 			using var response = await TorClient.SendAndRetryAsync(
 				HttpMethod.Get,
 				HttpStatusCode.OK,
-<<<<<<< HEAD
-				$"/api/v{ApiVersion}/btc/blockchain/filters?bestKnownBlockHash={bestKnownBlockHash}&count={count}",
-=======
-				$"/api/v{Constants.BackendMajorVersion}/ltc/blockchain/filters?bestKnownBlockHash={bestKnownBlockHash}&count={count}",
->>>>>>> Switch API from /btc/ to /ltc/
+				$"/api/v{ApiVersion}/ltc/blockchain/filters?bestKnownBlockHash={bestKnownBlockHash}&count={count}",
 				cancel: cancel);
 			if (response.StatusCode == HttpStatusCode.NoContent)
 			{
@@ -114,11 +110,7 @@ namespace WalletWasabi.WebClients.Wasabi
 				using var response = await TorClient.SendAndRetryAsync(
 					HttpMethod.Get,
 					HttpStatusCode.OK,
-<<<<<<< HEAD
-					$"/api/v{ApiVersion}/btc/blockchain/transaction-hexes?&transactionIds={string.Join("&transactionIds=", chunk.Select(x => x.ToString()))}",
-=======
-					$"/api/v{Constants.BackendMajorVersion}/ltc/blockchain/transaction-hexes?&transactionIds={string.Join("&transactionIds=", chunk.Select(x => x.ToString()))}",
->>>>>>> Switch API from /btc/ to /ltc/
+					$"/api/v{ApiVersion}/ltc/blockchain/transaction-hexes?&transactionIds={string.Join("&transactionIds=", chunk.Select(x => x.ToString()))}",
 					cancel: cancel);
 				if (response.StatusCode != HttpStatusCode.OK)
 				{
@@ -155,11 +147,7 @@ namespace WalletWasabi.WebClients.Wasabi
 		{
 			var confirmationTargetsString = string.Join(",", confirmationTargets);
 
-<<<<<<< HEAD
-			using var response = await TorClient.SendAndRetryAsync(HttpMethod.Get, HttpStatusCode.OK, $"/api/v{ApiVersion}/btc/blockchain/fees/{confirmationTargetsString}");
-=======
-			using var response = await TorClient.SendAndRetryAsync(HttpMethod.Get, HttpStatusCode.OK, $"/api/v{Constants.BackendMajorVersion}/ltc/blockchain/fees/{confirmationTargetsString}");
->>>>>>> Switch API from /btc/ to /ltc/
+			using var response = await TorClient.SendAndRetryAsync(HttpMethod.Get, HttpStatusCode.OK, $"/api/v{ApiVersion}/ltc/blockchain/fees/{confirmationTargetsString}");
 			if (response.StatusCode != HttpStatusCode.OK)
 			{
 				await response.ThrowRequestExceptionFromContentAsync();
@@ -173,11 +161,7 @@ namespace WalletWasabi.WebClients.Wasabi
 		public async Task BroadcastAsync(string hex)
 		{
 			using var content = new StringContent($"'{hex}'", Encoding.UTF8, "application/json");
-<<<<<<< HEAD
-			using var response = await TorClient.SendAsync(HttpMethod.Post, $"/api/v{ApiVersion}/btc/blockchain/broadcast", content);
-=======
-			using var response = await TorClient.SendAsync(HttpMethod.Post, $"/api/v{Constants.BackendMajorVersion}/ltc/blockchain/broadcast", content);
->>>>>>> Switch API from /btc/ to /ltc/
+			using var response = await TorClient.SendAsync(HttpMethod.Post, $"/api/v{ApiVersion}/ltc/blockchain/broadcast", content);
 			if (response.StatusCode != HttpStatusCode.OK)
 			{
 				await response.ThrowRequestExceptionFromContentAsync();
@@ -199,11 +183,7 @@ namespace WalletWasabi.WebClients.Wasabi
 			using var response = await TorClient.SendAndRetryAsync(
 				HttpMethod.Get,
 				HttpStatusCode.OK,
-<<<<<<< HEAD
-				$"/api/v{ApiVersion}/btc/blockchain/mempool-hashes",
-=======
-				$"/api/v{Constants.BackendMajorVersion}/ltc/blockchain/mempool-hashes",
->>>>>>> Switch API from /btc/ to /ltc/
+				$"/api/v{ApiVersion}/ltc/blockchain/mempool-hashes",
 				cancel: cancel);
 			if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -225,11 +205,7 @@ namespace WalletWasabi.WebClients.Wasabi
 			using var response = await TorClient.SendAndRetryAsync(
 				HttpMethod.Get,
 				HttpStatusCode.OK,
-<<<<<<< HEAD
-				$"/api/v{ApiVersion}/btc/blockchain/mempool-hashes?compactness={compactness}",
-=======
-				$"/api/v{Constants.BackendMajorVersion}/ltc/blockchain/mempool-hashes?compactness={compactness}",
->>>>>>> Switch API from /btc/ to /ltc/
+				$"/api/v{ApiVersion}/ltc/blockchain/mempool-hashes?compactness={compactness}",
 				cancel: cancel);
 			if (response.StatusCode != HttpStatusCode.OK)
 			{
@@ -247,11 +223,7 @@ namespace WalletWasabi.WebClients.Wasabi
 
 		public async Task<IEnumerable<ExchangeRate>> GetExchangeRatesAsync()
 		{
-<<<<<<< HEAD
-			using var response = await TorClient.SendAndRetryAsync(HttpMethod.Get, HttpStatusCode.OK, $"/api/v{ApiVersion}/btc/offchain/exchange-rates");
-=======
-			using var response = await TorClient.SendAndRetryAsync(HttpMethod.Get, HttpStatusCode.OK, $"/api/v{Constants.BackendMajorVersion}/ltc/offchain/exchange-rates");
->>>>>>> Switch API from /btc/ to /ltc/
+			using var response = await TorClient.SendAndRetryAsync(HttpMethod.Get, HttpStatusCode.OK, $"/api/v{ApiVersion}/ltc/offchain/exchange-rates");
 			if (response.StatusCode != HttpStatusCode.OK)
 			{
 				await response.ThrowRequestExceptionFromContentAsync();
@@ -306,7 +278,7 @@ namespace WalletWasabi.WebClients.Wasabi
 			using var response = await TorClient.SendAndRetryAsync(
 				HttpMethod.Get,
 				HttpStatusCode.OK,
-				$"/api/v{ApiVersion}/wasabi/legaldocuments",
+				$"/api/v{ApiVersion}/mustard/legaldocuments",
 				cancel: cancel).ConfigureAwait(false);
 			if (response.StatusCode != HttpStatusCode.OK)
 			{
