@@ -34,7 +34,7 @@ namespace WalletWasabi.Tests.Helpers
 					txIndex: 1,
 					prune: 0,
 					mempoolReplacement: "fee,optin",
-					userAgent: $"/WasabiClient:{Constants.ClientVersion}/",
+					userAgent: $"/MustardWalletLTCClient:{Constants.ClientVersion}/",
 					fallbackFee: Money.Coins(0.0002m), // https://github.com/bitcoin/bitcoin/pull/16524
 					new MemoryCache(new MemoryCacheOptions())),
 				CancellationToken.None);
