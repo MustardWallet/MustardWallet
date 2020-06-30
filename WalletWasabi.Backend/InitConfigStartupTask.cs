@@ -32,7 +32,7 @@ namespace WalletWasabi.Backend
 		public async Task ExecuteAsync(CancellationToken cancellationToken)
 		{
 			Logger.InitializeDefaults(Path.Combine(Global.DataDir, "Logs.txt"));
-			Logger.LogSoftwareStarted("Wasabi Backend");
+			Logger.LogSoftwareStarted("Mustard Wallet for Litecoin Backend");
 
 			AppDomain.CurrentDomain.UnhandledException += CurrentDomain_UnhandledException;
 			TaskScheduler.UnobservedTaskException += TaskScheduler_UnobservedTaskException;
