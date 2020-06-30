@@ -28,7 +28,7 @@ I. TERMS AND CONDITIONS
      - the Mustard Wallet Team (“Service Provider” or “we”, which includes our subsidiaries, partners, affiliates, agents, employees, licensors, service providers or subcontractors (if any)) and
      - the person, persons, or entity (“You” or “Your”) using the Services (as defined below).
 
-    These Terms apply to the download of the Client Application (as defined below), any access and use of the Client Application , our website at https://mustardwallet.com or its onion mirror at http://p5d45yv2wobyqaj7.onion/ (*) and our CoinJoin Coordinator Services (as defined below), and any of our other Services related to or utilizing any of the foregoing, which we refer to in these Terms and Conditions documents (“Terms” or “Terms of Use”), collectively, as our “Services”.
+    These Terms apply to the download of the Client Application (as defined below), any access and use of the Client Application , our website at https://MustardWallet.com or its onion mirror at http://p5d45yv2wobyqaj7.onion/ (*) and our CoinJoin Coordinator Services (as defined below), and any of our other Services related to or utilizing any of the foregoing, which we refer to in these Terms and Conditions documents (“Terms” or “Terms of Use”), collectively, as our “Services”.
 
 1.2 ELIGIBILITY AND AGREEMENT
     If You use the Services these Terms apply. You will be solely liable for any damage or consequences arising from use without the full acceptance of the rules. The Service Provider shall not be liable under any circumstances in this case.
@@ -145,7 +145,7 @@ I. TERMS AND CONDITIONS
     If for any reason a court of competent jurisdiction finds any provision of these Terms to be invalid or unenforceable, that provision will be enforced to the maximum extent permissible and the other provisions of these Terms will remain in full force and effect.
 
 9.2 ARBITRATION
-    You and the Service Provider agree to arbitrate any dispute arising under or in connection with these Terms or Your use of our Services, except for disputes in which either party seeks equitable and other relief for any alleged infringement or unlawful use of copyrights, trademarks, trade names, logos, trade secrets, patents or other intellectual property rights. Arbitration prevents You from suing in court or from having a jury trial. You and the Service Provider agree to notify each other in writing of any dispute within thirty (30) days of when it arises. Notice to the Service Provider shall be sent to legal@mustardwallet.com .
+    You and the Service Provider agree to arbitrate any dispute arising under or in connection with these Terms or Your use of our Services, except for disputes in which either party seeks equitable and other relief for any alleged infringement or unlawful use of copyrights, trademarks, trade names, logos, trade secrets, patents or other intellectual property rights. Arbitration prevents You from suing in court or from having a jury trial. You and the Service Provider agree to notify each other in writing of any dispute within thirty (30) days of when it arises. Notice to the Service Provider shall be sent to legal@MustardWallet.com .
 
     You and the Service Provider further agree:
      - to attempt informal resolution prior to any demand for arbitration;
@@ -222,7 +222,7 @@ Changes to this policy
 Contact details regarding this declaration
 ==========================================
 
-    In case You have any questions concerning the Mustard Wallet Team’s Privacy Policy or if You would like to exercise Your right of information, rectification or deletion, please send us a written request outlining Your desire to: legal@mustardwallet.com .
+    In case You have any questions concerning the Mustard Wallet Team’s Privacy Policy or if You would like to exercise Your right of information, rectification or deletion, please send us a written request outlining Your desire to: legal@MustardWallet.com .
     Other contact details for the data controller are at the end of this document.
 
 =========================================
@@ -251,7 +251,7 @@ COMPLIANCE WITH TAX OBLIGATIONS
 COUNTRY OF RESIDENCE
 ====================
 
-    In case if You are a Gibraltar resident and willing to use Mustard Wallet please inform us in advance on the following e-mail address: legal@mustardwallet.com.
+    In case if You are a Gibraltar resident and willing to use Mustard Wallet please inform us in advance on the following e-mail address: legal@MustardWallet.com.
 
 (*) We recommend You to prefer Tor Browser over other browsers in order to protect Your privacy while visiting our websites.
 
