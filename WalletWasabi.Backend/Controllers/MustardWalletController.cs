@@ -14,7 +14,7 @@ namespace WalletWasabi.Backend.Controllers
 	/// </summary>
 	[Produces("application/json")]
 	[Route("api/v" + Constants.BackendMajorVersion + "/[controller]")]
-	public class WasabiController : Controller
+	public class MustardWalletController : Controller
 	{
 		/// <summary>
 		/// Gets the latest legal documents.
