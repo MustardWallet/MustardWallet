@@ -14,15 +14,15 @@ namespace WalletWasabi.Blockchain.BlockFilters
 		public static FilterModel GetStartingFilter(Network network)
 		{
 			var startingHeader = SmartHeader.GetStartingHeader(network);
-			if (network == Network.Main)
+			if (network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
-				return FilterModel.FromLine($"{startingHeader.Height}:{startingHeader.BlockHash}:02832810ec08a0:{startingHeader.PrevHash}:{startingHeader.BlockTime.ToUnixTimeSeconds()}");
+				return FilterModel.FromLine($"{startingHeader.Height}:{startingHeader.BlockHash}:{startingHeader.BlockHash}:{startingHeader.PrevHash}:{startingHeader.BlockTime.ToUnixTimeSeconds()}");
 			}
-			else if (network == Network.TestNet)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Testnet)
 			{
-				return FilterModel.FromLine($"{startingHeader.Height}:{startingHeader.BlockHash}:00000000000f0d5edcaeba823db17f366be49a80d91d15b77747c2e017b8c20a:{startingHeader.PrevHash}:{startingHeader.BlockTime.ToUnixTimeSeconds()}");
+				return FilterModel.FromLine($"{startingHeader.Height}:{startingHeader.BlockHash}:{startingHeader.BlockHash}:{startingHeader.PrevHash}:{startingHeader.BlockTime.ToUnixTimeSeconds()}");
 			}
-			else if (network == Network.RegTest)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				GolombRiceFilter filter = IndexBuilderService.CreateDummyEmptyFilter(startingHeader.BlockHash);
 				return FilterModel.FromLine($"{startingHeader.Height}:{startingHeader.BlockHash}:{filter}:{startingHeader.PrevHash}:{startingHeader.BlockTime.ToUnixTimeSeconds()}");

@@ -222,7 +222,7 @@ namespace NBitcoin
 		public static string ToZpub(this ExtPubKey extPubKey, Network network)
 		{
 			var data = extPubKey.ToBytes();
-			var version = (network == Network.Main)
+			var version = (network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 				? new byte[] { (0x04), (0xB2), (0x47), (0x46) }
 				: new byte[] { (0x04), (0x5F), (0x1C), (0xF6) };
 
@@ -232,7 +232,7 @@ namespace NBitcoin
 		public static string ToZPrv(this ExtKey extKey, Network network)
 		{
 			var data = extKey.ToBytes();
-			var version = (network == Network.Main)
+			var version = (network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 				? new byte[] { (0x04), (0xB2), (0x43), (0x0C) }
 				: new byte[] { (0x04), (0x5F), (0x18), (0xBC) };
 

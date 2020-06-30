@@ -22,28 +22,28 @@ namespace WalletWasabi.Packager
 
 			string desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
 
-			var srcZipFileNamePattern = "Wasabi-osx-*.zip";
-			var files = Directory.GetFiles(desktopPath, srcZipFileNamePattern); // Example: Wasabi-osx-1.1.10.2.zip
+			var srcZipFileNamePattern = "MustardWalletLTC-osx-*.zip";
+			var files = Directory.GetFiles(desktopPath, srcZipFileNamePattern); // Example: MustardWalletLTC-osx-1.1.10.2.zip
 			if (files.Length != 1)
 			{
 				throw new InvalidDataException($"{srcZipFileNamePattern} file missing or there are more on Desktop! There must be exactly one!");
 			}
 			var zipPath = files[0];
-			var versionPrefix = zipPath.Split('-')[^1].TrimEnd(".zip", StringComparison.InvariantCultureIgnoreCase); // Example: "/Users/user/Desktop/Wasabi-unsigned-1.1.10.2.zip".
+			var versionPrefix = zipPath.Split('-')[^1].TrimEnd(".zip", StringComparison.InvariantCultureIgnoreCase); // Example: "/Users/user/Desktop/MustardWalletLTC-unsigned-1.1.10.2.zip".
 			var workingDir = Path.Combine(desktopPath, "wasabiTemp");
 			var dmgPath = Path.Combine(workingDir, "dmg");
 			var unzippedPath = Path.Combine(workingDir, "unzipped");
-			var appName = "Wasabi Wallet.app";
+			var appName = "Mustard Wallet for Litecoin.app";
 			var appPath = Path.Combine(dmgPath, appName);
 			var appContentsPath = Path.Combine(appPath, "Contents");
 			var appMacOsPath = Path.Combine(appContentsPath, "MacOS");
 			var appResPath = Path.Combine(appContentsPath, "Resources");
 			var appFrameworksPath = Path.Combine(appContentsPath, "Frameworks");
 			var infoFilePath = Path.Combine(appContentsPath, "Info.plist");
-			var dmgFileName = $"Wasabi-{versionPrefix}.dmg";
+			var dmgFileName = $"MustardWalletLTC-{versionPrefix}.dmg";
 			var dmgFilePath = Path.Combine(workingDir, dmgFileName);
-			var dmgUnzippedFilePath = Path.Combine(workingDir, $"Wasabi.tmp.dmg");
-			var appNotarizeFilePath = Path.Combine(workingDir, $"Wasabi-{versionPrefix}.zip");
+			var dmgUnzippedFilePath = Path.Combine(workingDir, $"MustardWalletLTC.tmp.dmg");
+			var appNotarizeFilePath = Path.Combine(workingDir, $"MustardWalletLTC-{versionPrefix}.zip");
 			var contentsPath = Path.GetFullPath(Path.Combine(Program.PackagerProjectDirectory.Replace("\\", "//"), "Content", "Osx"));
 			var entitlementsPath = Path.Combine(contentsPath, "entitlements.plist");
 			var dmgContentsDir = Path.Combine(contentsPath, "Dmg");
@@ -137,7 +137,7 @@ namespace WalletWasabi.Packager
 			var executables = GetExecutables(appPath);
 			var filesToSignInOrder = Directory.GetFiles(appPath, "*.*", SearchOption.AllDirectories)
 				.OrderBy(file => executables.Contains(file))
-				.OrderBy(file => new FileInfo(file).Name == "wassabee")
+				.OrderBy(file => new FileInfo(file).Name == "mustardwalletltc")
 				.ToArray();
 
 			foreach (var file in executables)
@@ -220,7 +220,7 @@ namespace WalletWasabi.Packager
 				"create",
 				$"\"{dmgUnzippedFilePath}\"",
 				"-ov",
-				$"-volname \"Wasabi Wallet\"",
+				$"-volname \"Mustard Wallet for Litecoin\"",
 				"-fs HFS+",
 				$"-srcfolder \"{dmgPath}\""
 			});
@@ -434,7 +434,7 @@ namespace WalletWasabi.Packager
 			});
 			process.WaitForExit();
 			string result = process.StandardError.ReadToEnd();
-			if (!result.Contains("Authority=Developer ID Application: zkSNACKs Ltd."))
+			if (!result.Contains("Authority=Developer ID Application: MustardWallet"))
 			{
 				throw new InvalidOperationException(result);
 			}
@@ -444,7 +444,7 @@ namespace WalletWasabi.Packager
 		{
 			// Tor already signed by: The Tor Project, Inc (MADPSAYN6T)
 
-			// Wassabee has to be signed at the end. Otherwise codesign will throw a "submodule not signed" error.
+			// mustardwalletltc has to be signed at the end. Otherwise codesign will throw a "submodule not signed" error.
 			foreach (var file in files)
 			{
 				var fileName = new FileInfo(file).Name;

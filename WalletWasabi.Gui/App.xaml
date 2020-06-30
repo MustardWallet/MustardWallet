@@ -39,7 +39,7 @@
   </Application.DataTemplates>
   <NativeMenu.Menu>
     <NativeMenu>
-      <NativeMenuItem Header="About Wasabi Wallet" Command="{Binding AboutCommand}" />
+      <NativeMenuItem Header="About Mustard Wallet for Litecoin" Command="{Binding AboutCommand}" />
     </NativeMenu>
   </NativeMenu.Menu>
 </Application>

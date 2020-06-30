@@ -45,7 +45,7 @@
           <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <controls:SortingArrow Grid.Column="2" Text="Status" Command="{Binding SortCommand}" SortDirection="{Binding StatusSortDirection}" />
-        <controls:SortingArrow Grid.Column="3" Text="Amount (BTC)" Command="{Binding SortCommand}" SortDirection="{Binding AmountSortDirection}" />
+        <controls:SortingArrow Grid.Column="3" Text="Amount (LTC)" Command="{Binding SortCommand}" SortDirection="{Binding AmountSortDirection}" />
         <controls:SortingArrow Grid.Column="4" Text="Privacy" Command="{Binding SortCommand}" SortDirection="{Binding PrivacySortDirection}" />
         <controls:SortingArrow Grid.Column="5" Text="Known By" Command="{Binding SortCommand}" SortDirection="{Binding ClustersSortDirection}" />
       </Grid>
@@ -69,7 +69,7 @@
           <TextBlock Text="|" />
           <TextBlock Text="Selected Amount:" />
           <TextBlock Foreground="YellowGreen" Text="{Binding SelectedAmount, ConverterParameter=8, Converter={StaticResource LurkingWifeModeStringConverter}}" />
-          <TextBlock Text="BTC" />
+          <TextBlock Text="LTC" />
           <TextBlock Text="Merging unmixed coins with mixed ones undoes the mixes." Classes="warningMessage" IsVisible="{Binding LabelExposeCommonOwnershipWarning}" />
         </StackPanel>
       </StackPanel>

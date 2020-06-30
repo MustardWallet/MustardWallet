@@ -18,7 +18,7 @@ namespace WalletWasabi.Tests
 		{
 			TorSocks5Endpoint = new IPEndPoint(IPAddress.Loopback, 9050);
 
-			DataDir = EnvironmentHelpers.GetDataDir(Path.Combine("WalletWasabi", "Tests"));
+			DataDir = EnvironmentHelpers.GetDataDir(Path.Combine("MustardWalletLTC", "Tests"));
 			TorLogsFile = Path.Combine(DataDir, "TorLogs.txt");
 
 			Logger.SetFilePath(Path.Combine(DataDir, "Logs.txt"));

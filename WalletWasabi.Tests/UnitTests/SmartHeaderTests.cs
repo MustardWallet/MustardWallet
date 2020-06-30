@@ -36,7 +36,7 @@ namespace WalletWasabi.Tests.UnitTests
 			uint expectedHeightMain = 481824;
 			var expectedTimeMain = DateTimeOffset.FromUnixTimeSeconds(1503539857);
 
-			var expectedHashTest = new uint256("00000000000f0d5edcaeba823db17f366be49a80d91d15b77747c2e017b8c20a");
+			var expectedHashTest = new uint256("d9a4f13307e044144cf61c0950cad8af4911fbc7ec87e5081d5d5270b05637b6");
 			var expectedPrevHashTest = new uint256("0000000000211a4d54bceb763ea690a4171a734c48d36f7d8e30b51d6df6ea85");
 			uint expectedHeightTest = 828575;
 			var expectedTimeTest = DateTimeOffset.FromUnixTimeSeconds(1463079943);

@@ -26,7 +26,7 @@ namespace WalletWasabi.JsonConverters
 		{
 			var epk = (ExtPubKey)value;
 
-			var xpub = epk.GetWif(Network.Main).ToWif();
+			var xpub = epk.GetWif(NBitcoin.Altcoins.Litecoin.Instance.Mainnet).ToWif();
 			writer.WriteValue(xpub);
 		}
 	}

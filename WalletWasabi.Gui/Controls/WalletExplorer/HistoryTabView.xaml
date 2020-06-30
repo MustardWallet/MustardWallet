@@ -23,7 +23,7 @@
           <Grid ColumnDefinitions="40, 160, 150, *" Margin="10 0 0 0" DockPanel.Dock="Top">
             <TextBlock Text="" />
             <controls:SortingArrow Grid.Column="1" Command="{Binding SortCommand}" Text="Date" SortDirection="{Binding DateSortDirection}" />
-            <controls:SortingArrow Grid.Column="2" Command="{Binding SortCommand}" Text="Amount (BTC)" SortDirection="{Binding AmountSortDirection}" />
+            <controls:SortingArrow Grid.Column="2" Command="{Binding SortCommand}" Text="Amount (LTC)" SortDirection="{Binding AmountSortDirection}" />
             <controls:SortingArrow Grid.Column="3" Command="{Binding SortCommand}" Text="Transaction ID" SortDirection="{Binding TransactionSortDirection}" />
           </Grid>
           <controls:ExtendedListBox Items="{Binding Transactions}" SelectedItem="{Binding SelectedTransaction, Mode=TwoWay}">

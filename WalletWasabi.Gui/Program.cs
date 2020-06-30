@@ -48,9 +48,9 @@ namespace WalletWasabi.Gui
 
 				if (runGui)
 				{
-					Logger.LogSoftwareStarted("Wasabi GUI");
+					Logger.LogSoftwareStarted("Mustard Wallet for Litecoin GUI");
 
-					BuildAvaloniaApp().StartShellApp("Wasabi Wallet", AppMainAsync, args);
+					BuildAvaloniaApp().StartShellApp("Mustard Wallet for Litecoin", AppMainAsync, args);
 				}
 			}
 			catch (Exception ex)
@@ -215,7 +215,7 @@ namespace WalletWasabi.Gui
 
 			return result
 				.With(new Win32PlatformOptions { AllowEglInitialization = true, UseDeferredRendering = true })
-				.With(new X11PlatformOptions { UseGpu = useGpuLinux, WmClass = "Wasabi Wallet" })
+				.With(new X11PlatformOptions { UseGpu = useGpuLinux, WmClass = "Mustard Wallet for Litecoin" })
 				.With(new AvaloniaNativePlatformOptions { UseDeferredRendering = true, UseGpu = true })
 				.With(new MacOSPlatformOptions { ShowInDock = true });
 		}

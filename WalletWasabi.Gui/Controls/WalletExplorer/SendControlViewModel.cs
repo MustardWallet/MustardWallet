@@ -352,7 +352,7 @@ namespace WalletWasabi.Gui.Controls.WalletExplorer
 				catch (InsufficientBalanceException ex)
 				{
 					Money needed = ex.Minimum - ex.Actual;
-					NotificationHelpers.Error($"Not enough coins selected. You need an estimated {needed.ToString(false, true)} BTC more to make this transaction.", "");
+					NotificationHelpers.Error($"Not enough coins selected. You need an estimated {needed.ToString(false, true)} LTC more to make this transaction.", "");
 				}
 				catch (HttpRequestException ex)
 				{
@@ -763,13 +763,14 @@ namespace WalletWasabi.Gui.Controls.WalletExplorer
 							break;
 
 						case FeeDisplayFormat.USD:
-							FeeText = $"(~ ${UsdFee:0.##})";
-							FeeToolTip = $"Estimated total fees in USD. Exchange Rate: {(long)UsdExchangeRate} USD/BTC.";
+							// LTC Litecoin needs more digits because fees are so low !
+							FeeText = $"(~ ${UsdFee:0.######})";
+							FeeToolTip = $"Estimated total fees in USD. Exchange Rate: {(long)UsdExchangeRate} USD/LTC.";
 							break;
 
 						case FeeDisplayFormat.BTC:
-							FeeText = $"(~ {EstimatedBtcFee.ToString(false, false)} BTC)";
-							FeeToolTip = "Estimated total fees in BTC.";
+							FeeText = $"(~ {EstimatedBtcFee.ToString(false, false)} LTC)";
+							FeeToolTip = "Estimated total fees in LTC.";
 							break;
 
 						case FeeDisplayFormat.Percentage:

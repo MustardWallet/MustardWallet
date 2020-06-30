@@ -29,13 +29,13 @@ namespace WalletWasabi.Gui.CommandLine
 				return true;
 			}
 
-			var suite = new CommandSet("wassabee", Out, Error)
+			var suite = new CommandSet("mustardwalletltc", Out, Error)
 			{
-				"Usage: wassabee [OPTIONS]+",
-				"Launches Wasabi Wallet.",
+				"Usage: mustardwalletltc [OPTIONS]+",
+				"Launches Mustard Wallet for Litecoin , based on Wasabi Wallet for Bitcoin .",
 				"",
 				{ "h|help", "Displays help page and exit.", x => showHelp = x != null },
-				{ "v|version", "Displays Wasabi version and exit.", x => showVersion = x != null },
+				{ "v|version", "Displays version and exit.", x => showVersion = x != null },
 				"",
 				"Available commands are:",
 				"",
@@ -76,9 +76,9 @@ namespace WalletWasabi.Gui.CommandLine
 
 		private void ShowVersion()
 		{
-			Out.WriteLine($"Wasabi Client Version: {Constants.ClientVersion}");
+			Out.WriteLine($"Mustard Wallet for Litecoin Client Version: {Constants.ClientVersion}");
 			Out.WriteLine($"Compatible Coordinator Version: {Constants.ClientSupportBackendVersionText}");
-			Out.WriteLine($"Compatible Bitcoin Core and Bitcoin Knots Versions: {Constants.BitcoinCoreVersion}");
+			Out.WriteLine($"Compatible Litecoin Core Version: {Constants.BitcoinCoreVersion}");
 			Out.WriteLine($"Compatible Hardware Wallet Interface Version: {Constants.HwiVersion}");
 		}
 	}

@@ -30,23 +30,33 @@ namespace WalletWasabi.Blockchain.Blocks
 
 		#region SpecialHeaders
 
-		private static SmartHeader StartingHeaderMain { get; } = new SmartHeader(
-			new uint256("0000000000000000001c8018d9cb3b742ef25114f27563e3fc4a1902167f9893"),
-			new uint256("000000000000000000cbeff0b533f8e1189cf09dfbebf57a8ebe349362811b80"),
-			481824,
-			DateTimeOffset.FromUnixTimeSeconds(1503539857));
+/* Starting header is bech32 release
+   ---------------------------------
+Litecoin core 0.16.0 release candidate adds bech32 support on 21-3-2018
+- https://blog.litecoin.org/litecoin-core-v0-16-0-release-candidate-e1ac751d7f33
+- https://blog.litecoin.org/litecoin-core-v0-16-0-release-5bf9b732b069
+- https://www.reddit.com/r/litecoin/comments/85xquq/litecoin_core_v0160_release_candidate_litecoin/
 
+=> LTC MAINNET block 1388888 7228180483d83c21f271874ec46a81aa0cf5ff36d07c9fb58e15ae8e5163bedc from 20-3-2018 at Mar 20, 2018 at 08:37 (epoch 1521578220) with parent block 1388887 at 84651d17c4869f8136b36c393cfe9d3bc7712c5921c87a2524dd48a2a895815b
+*/
+		private static SmartHeader StartingHeaderMain { get; } = new SmartHeader(
+			new uint256("7228180483d83c21f271874ec46a81aa0cf5ff36d07c9fb58e15ae8e5163bedc"),
+			new uint256("84651d17c4869f8136b36c393cfe9d3bc7712c5921c87a2524dd48a2a895815b"),
+			1388888,
+			DateTimeOffset.FromUnixTimeSeconds(1521578220));
+
+		// Arbitrarily chosen Testnet Block
 		private static SmartHeader StartingHeaderTestNet { get; } = new SmartHeader(
-			new uint256("00000000000f0d5edcaeba823db17f366be49a80d91d15b77747c2e017b8c20a"),
-			new uint256("0000000000211a4d54bceb763ea690a4171a734c48d36f7d8e30b51d6df6ea85"),
+			new uint256("d9a4f13307e044144cf61c0950cad8af4911fbc7ec87e5081d5d5270b05637b6"),
+			new uint256("fb0f72e00e8201d684d406376bf7684bb2107ae9f24f438c87d7782bd5563b25"),
 			828575,
-			DateTimeOffset.FromUnixTimeSeconds(1463079943));
+			DateTimeOffset.FromUnixTimeSeconds(1541027990));
 
 		private static SmartHeader StartingHeaderRegTest { get; } = new SmartHeader(
-			Network.RegTest.GenesisHash,
-			Network.RegTest.GetGenesis().Header.HashPrevBlock,
+			NBitcoin.Altcoins.Litecoin.Instance.Regtest.GenesisHash,
+			NBitcoin.Altcoins.Litecoin.Instance.Regtest.GetGenesis().Header.HashPrevBlock,
 			0,
-			Network.RegTest.GetGenesis().Header.BlockTime);
+			NBitcoin.Altcoins.Litecoin.Instance.Regtest.GetGenesis().Header.BlockTime);
 
 		/// <summary>
 		/// Where the first possible bech32 transaction ever can be found.

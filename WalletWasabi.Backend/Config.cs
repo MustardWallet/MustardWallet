@@ -53,7 +53,7 @@ namespace WalletWasabi.Backend
 
 		[JsonProperty(PropertyName = "Network")]
 		[JsonConverter(typeof(NetworkJsonConverter))]
-		public Network Network { get; private set; } = Network.Main;
+		public Network Network { get; private set; } = NBitcoin.Altcoins.Litecoin.Instance.Mainnet;
 
 		[DefaultValue("user:password")]
 		[JsonProperty(PropertyName = "BitcoinRpcConnectionString", DefaultValueHandling = DefaultValueHandling.Populate)]
@@ -85,15 +85,15 @@ namespace WalletWasabi.Backend
 
 		public EndPoint GetBitcoinP2pEndPoint()
 		{
-			if (Network == Network.Main)
+			if (Network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
 				return MainNetBitcoinP2pEndPoint;
 			}
-			else if (Network == Network.TestNet)
+			else if (Network == NBitcoin.Altcoins.Litecoin.Instance.Testnet)
 			{
 				return TestNetBitcoinP2pEndPoint;
 			}
-			else if (Network == Network.RegTest)
+			else if (Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				return RegTestBitcoinP2pEndPoint;
 			}
@@ -105,15 +105,15 @@ namespace WalletWasabi.Backend
 
 		public EndPoint GetBitcoinCoreRpcEndPoint()
 		{
-			if (Network == Network.Main)
+			if (Network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
 				return MainNetBitcoinCoreRpcEndPoint;
 			}
-			else if (Network == Network.TestNet)
+			else if (Network == NBitcoin.Altcoins.Litecoin.Instance.Testnet)
 			{
 				return TestNetBitcoinCoreRpcEndPoint;
 			}
-			else if (Network == Network.RegTest)
+			else if (Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				return RegTestBitcoinCoreRpcEndPoint;
 			}

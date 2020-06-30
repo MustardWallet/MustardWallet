@@ -17,7 +17,7 @@ namespace WalletWasabi.Gui.CommandLine
 				"usage: mix --wallet:WalletName --keepalive",
 				"",
 				"Start mixing without the GUI with the specified wallet.",
-				"eg: ./wassabee mix --wallet:MyWalletName --keepalive",
+				"eg: ./mustardwalletltc mix --wallet:MyWalletName --keepalive",
 				{ "h|help", "Displays help page and exit.", x => ShowHelp = x != null },
 				{ "w|wallet=", "The name of the wallet file.", x => WalletName = x },
 				{ "destination=", "The name of the destination wallet file.", x => DestinationWalletName = x },

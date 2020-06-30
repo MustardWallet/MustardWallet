@@ -23,7 +23,7 @@ namespace WalletWasabi.JsonConverters
 			string networkString = ((string)reader.Value).Trim();
 			if ("regression".Equals(networkString, StringComparison.OrdinalIgnoreCase))
 			{
-				return Network.RegTest;
+				return NBitcoin.Altcoins.Litecoin.Instance.Regtest;
 			}
 
 			return Network.GetNetwork(networkString);

@@ -101,7 +101,7 @@ namespace WalletWasabi.Helpers
 					var localAppData = Environment.GetEnvironmentVariable("APPDATA");
 					if (!string.IsNullOrEmpty(localAppData))
 					{
-						directory = Path.Combine(localAppData, "Bitcoin");
+						directory = Path.Combine(localAppData, "Litecoin");
 					}
 					else
 					{
@@ -114,8 +114,8 @@ namespace WalletWasabi.Helpers
 					if (!string.IsNullOrEmpty(home))
 					{
 						directory = RuntimeInformation.IsOSPlatform(OSPlatform.OSX)
-							? Path.Combine(home, "Library", "Application Support", "Bitcoin")
-							: Path.Combine(home, ".bitcoin"); // Linux
+							? Path.Combine(home, "Library", "Application Support", "Litecoin")
+							: Path.Combine(home, ".litecoin"); // Linux
 					}
 					else
 					{

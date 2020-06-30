@@ -67,7 +67,7 @@ namespace WalletWasabi.CoinJoin.Coordinator.Rounds
 				Bobs = new List<Bob>();
 
 				Logger.LogInfo($"Round ({RoundId}): New round is created.\n\t" +
-					$"BaseDenomination: {MixingLevels.GetBaseDenomination().ToString(false, true)} BTC.\n\t" +
+					$"BaseDenomination: {MixingLevels.GetBaseDenomination().ToString(false, true)} LTC.\n\t" +
 					$"{nameof(AdjustedConfirmationTarget)}: {AdjustedConfirmationTarget}.\n\t" +
 					$"{nameof(CoordinatorFeePercent)}: {CoordinatorFeePercent}%.\n\t" +
 					$"{nameof(AnonymitySet)}: {AnonymitySet}.");
@@ -1149,7 +1149,7 @@ namespace WalletWasabi.CoinJoin.Coordinator.Rounds
 					{
 						Coin[] spentCoins = Alices.SelectMany(x => x.Inputs).ToArray();
 						Money networkFee = CoinJoin.GetFee(spentCoins);
-						Logger.LogInfo($"Round ({RoundId}): Network Fee: {networkFee.ToString(false, false)} BTC.");
+						Logger.LogInfo($"Round ({RoundId}): Network Fee: {networkFee.ToString(false, false)} LTC.");
 						FeeRate feeRate = CoinJoin.GetFeeRate(spentCoins);
 						Logger.LogInfo($"Round ({RoundId}): Network Fee Rate: {feeRate.FeePerK.ToDecimal(MoneyUnit.Satoshi) / 1000} sat/vByte.");
 						Logger.LogInfo($"Round ({RoundId}): Number of inputs: {CoinJoin.Inputs.Count}.");
@@ -1158,7 +1158,7 @@ namespace WalletWasabi.CoinJoin.Coordinator.Rounds
 						Logger.LogInfo($"Round ({RoundId}): VSize: {CoinJoin.GetVirtualSize() / 1024} KB.");
 						foreach (var o in CoinJoin.GetIndistinguishableOutputs(includeSingle: false))
 						{
-							Logger.LogInfo($"Round ({RoundId}): There are {o.count} occurrences of {o.value.ToString(true, false)} BTC output.");
+							Logger.LogInfo($"Round ({RoundId}): There are {o.count} occurrences of {o.value.ToString(true, false)} LTC output.");
 						}
 
 						await RpcClient.SendRawTransactionAsync(CoinJoin).ConfigureAwait(false);

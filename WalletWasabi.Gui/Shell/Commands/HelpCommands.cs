@@ -34,7 +34,7 @@ namespace WalletWasabi.Gui.Shell.Commands
 					{
 						try
 						{
-							await IoHelpers.OpenBrowserAsync("https://www.reddit.com/r/WasabiWallet/");
+							await IoHelpers.OpenBrowserAsync("https://www.reddit.com/r/MustardWallet/");
 						}
 						catch (Exception ex)
 						{
@@ -50,7 +50,7 @@ namespace WalletWasabi.Gui.Shell.Commands
 					{
 						try
 						{
-							await IoHelpers.OpenBrowserAsync("https://github.com/zkSNACKs/WalletWasabi/issues");
+							await IoHelpers.OpenBrowserAsync("https://github.com/MustardWallet/MustardWalletLTC/issues");
 						}
 						catch (Exception ex)
 						{

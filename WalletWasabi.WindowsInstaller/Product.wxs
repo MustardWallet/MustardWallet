@@ -8,7 +8,7 @@
     Language="!(loc.Language)"
     Version="$(var.BuildVersion)"
     Manufacturer="!(loc.Company)"
-    UpgradeCode="{D8E80773-D8CF-4031-B8B3-AA750AF0B413}">
+    UpgradeCode="{AA457E0B-BDAC-22E8-61DE-AFE715642FCF}">
 
     <!-- Provide package details. -->
     <Package
@@ -39,9 +39,9 @@
     <!-- any comments -->
     <Property Id='ARPCOMMENTS'>!(loc.Description)</Property>
     <!-- URL for technical support -->
-    <Property Id='ARPHELPLINK'>https://www.reddit.com/r/WasabiWallet/</Property>
+    <Property Id='ARPHELPLINK'>https://www.reddit.com/r/MustardWallet/</Property>
     <!-- URL for general info about the product -->
-    <Property Id="ARPURLINFOABOUT">https://github.com/zkSNACKs/WalletWasabi/</Property>
+    <Property Id="ARPURLINFOABOUT">https://github.com/MustardWallet/MustardWalletLTC/</Property>
     <!-- Use the icon.ico icon for this installer. -->
     <Property Id="ARPPRODUCTICON">icon.ico</Property>
     <!-- To suppress the Repair functionality, use: -->
@@ -63,7 +63,7 @@
     </UI>
 
     <!-- Define components, shortcuts, files, etc... for instealler. -->
-    <Feature Id="ProductFeature" Title="Wasabi" Level="1">
+    <Feature Id="ProductFeature" Title="MustardWalletLTC" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
       <ComponentGroupRef Id="PublishedComponents" />
     </Feature>

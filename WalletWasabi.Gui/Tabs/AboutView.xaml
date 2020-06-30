@@ -13,6 +13,7 @@
           <StackPanel Orientation="Horizontal">
             <TextBlock Text="Current Version: " />
             <controls:ExtendedTextBox Text="{Binding ClientVersion, Converter={StaticResource VersionStringConverter}}" Classes="selectableTextBlock" />
+            <TextBlock Text=" ( based on Wasabi Wallet v1.1.11.1 )" />
           </StackPanel>
           <StackPanel Orientation="Horizontal">
             <TextBlock Text="Compatible Coordinator Versions: " />
@@ -23,7 +24,7 @@
             <controls:ExtendedTextBox Text="{Binding CurrentBackendMajorVersion}" Classes="selectableTextBlock" />
           </StackPanel>
           <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Compatible Bitcoin Core and Bitcoin Knots Versions: " />
+            <TextBlock Text="Compatible Litecoin Core Versions: " />
             <controls:ExtendedTextBox Text="{Binding BitcoinCoreVersion, Converter={StaticResource VersionStringConverter}}" Classes="selectableTextBlock" />
           </StackPanel>
           <StackPanel Orientation="Horizontal">
@@ -43,12 +44,8 @@
             <Button Content="{Binding SourceCodeLink}" Classes="activeHyperLink" Command="{Binding OpenBrowserCommand}" CommandParameter="{Binding SourceCodeLink}" />
           </StackPanel>
           <StackPanel Orientation="Horizontal">
-            <TextBlock Text="Status Page: " />
-            <Button Content="{Binding StatusPageLink}" Classes="activeHyperLink" Command="{Binding OpenBrowserCommand}" CommandParameter="{Binding StatusPageLink}" />
-          </StackPanel>
-          <StackPanel Orientation="Horizontal">
             <TextBlock Text="User Support: " />
-            <Button Content="{Binding UserSupportLink}" Classes="activeHyperLink" Command="{Binding OpenBrowserCommand}" CommandParameter="{Binding UserSupportLink}" />
+            <Button Content="{Binding CustomerSupportLink}" Classes="activeHyperLink" Command="{Binding OpenBrowserCommand}" CommandParameter="{Binding UserSupportLink}" />
           </StackPanel>
           <StackPanel Orientation="Horizontal">
             <TextBlock Text="Bug Report: " />

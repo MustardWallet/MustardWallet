@@ -42,7 +42,7 @@ namespace WalletWasabi.Gui.Controls.WalletExplorer
 					try
 					{
 						Money balance = Wallet.Coins.TotalAmount();
-						Title = $"{WalletName} ({(UiConfig.LurkingWifeMode ? "#########" : balance.ToString(false, true))} BTC)";
+						Title = $"{WalletName} ({(UiConfig.LurkingWifeMode ? "#########" : balance.ToString(false, true))} LTC)";
 
 						TitleTip = balance.ToUsdString(Wallet.Synchronizer.UsdExchangeRate, UiConfig.LurkingWifeMode);
 					}

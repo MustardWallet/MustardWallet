@@ -174,9 +174,9 @@ namespace WalletWasabi.Hwi.Parsers
 		public static BitcoinAddress ParseAddress(string json, Network network)
 		{
 			// HWI does not support regtest, so the parsing would fail here.
-			if (network == Network.RegTest)
+			if (network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
-				network = Network.TestNet;
+				network = NBitcoin.Altcoins.Litecoin.Instance.Testnet;
 			}
 
 			if (JsonHelpers.TryParseJToken(json, out JToken token))
@@ -189,7 +189,7 @@ namespace WalletWasabi.Hwi.Parsers
 				}
 				catch (FormatException)
 				{
-					BitcoinAddress.Create(addressString, network == Network.Main ? Network.TestNet : Network.Main);
+					BitcoinAddress.Create(addressString, network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet ? NBitcoin.Altcoins.Litecoin.Instance.Testnet : NBitcoin.Altcoins.Litecoin.Instance.Mainnet);
 					throw new FormatException("Wrong network.");
 				}
 			}
@@ -202,9 +202,9 @@ namespace WalletWasabi.Hwi.Parsers
 		public static PSBT ParsePsbt(string json, Network network)
 		{
 			// HWI does not support regtest, so the parsing would fail here.
-			if (network == Network.RegTest)
+			if (network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
-				network = Network.TestNet;
+				network = NBitcoin.Altcoins.Litecoin.Instance.Testnet;
 			}
 
 			if (JsonHelpers.TryParseJToken(json, out JToken token))
@@ -335,7 +335,7 @@ namespace WalletWasabi.Hwi.Parsers
 			options ??= Enumerable.Empty<HwiOption>();
 			var fullOptions = new List<HwiOption>(options);
 
-			if (network != Network.Main)
+			if (network != NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
 				fullOptions.Insert(0, HwiOption.TestNet);
 			}

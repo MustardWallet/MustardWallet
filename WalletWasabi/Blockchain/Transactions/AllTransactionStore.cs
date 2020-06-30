@@ -63,7 +63,7 @@ namespace WalletWasabi.Blockchain.Transactions
 			try
 			{
 				// Before Wasabi 1.1.7
-				var networkIndependentTransactionsFolderPath = Path.Combine(EnvironmentHelpers.GetDataDir(Path.Combine("WalletWasabi", "Client")), "Transactions");
+				var networkIndependentTransactionsFolderPath = Path.Combine(EnvironmentHelpers.GetDataDir(Path.Combine("MustardWalletLTC", "Client")), "Transactions");
 				if (Directory.Exists(networkIndependentTransactionsFolderPath))
 				{
 					var oldTransactionsFolderPath = Path.Combine(networkIndependentTransactionsFolderPath, Network.Name);

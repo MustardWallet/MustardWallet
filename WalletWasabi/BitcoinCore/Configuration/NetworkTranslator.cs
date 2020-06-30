@@ -13,15 +13,15 @@ namespace WalletWasabi.BitcoinCore.Configuration
 		public static string GetConfigPrefix(Network network)
 		{
 			Guard.NotNull(nameof(network), network);
-			if (network == Network.Main)
+			if (network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
 				return "main";
 			}
-			else if (network == Network.TestNet)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Testnet)
 			{
 				return "test";
 			}
-			else if (network == Network.RegTest)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				return "regtest";
 			}
@@ -36,7 +36,7 @@ namespace WalletWasabi.BitcoinCore.Configuration
 			Guard.NotNull(nameof(network), network);
 
 			yield return $"{GetConfigPrefix(network)}.";
-			if (network == Network.Main)
+			if (network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
 				yield return "";
 			}
@@ -45,15 +45,15 @@ namespace WalletWasabi.BitcoinCore.Configuration
 		public static string GetDataDirPrefix(Network network)
 		{
 			Guard.NotNull(nameof(network), network);
-			if (network == Network.Main)
+			if (network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
 				return "";
 			}
-			else if (network == Network.TestNet)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Testnet)
 			{
 				return "testnet3";
 			}
-			else if (network == Network.RegTest)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				return "regtest";
 			}
@@ -66,15 +66,15 @@ namespace WalletWasabi.BitcoinCore.Configuration
 		public static string GetCommandLineArguments(Network network)
 		{
 			Guard.NotNull(nameof(network), network);
-			if (network == Network.Main)
+			if (network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 			{
 				return "-regtest=0 -testnet=0";
 			}
-			else if (network == Network.TestNet)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Testnet)
 			{
 				return "-regtest=0 -testnet=1";
 			}
-			else if (network == Network.RegTest)
+			else if (network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				return "-regtest=1 -testnet=0";
 			}

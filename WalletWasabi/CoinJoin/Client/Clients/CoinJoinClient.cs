@@ -245,7 +245,7 @@ namespace WalletWasabi.CoinJoin.Client.Clients
 
 				int delaySeconds = new Random().Next(0, 7); // delay the response to defend timing attack privacy.
 
-				if (Network == Network.RegTest)
+				if (Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 				{
 					delaySeconds = 0;
 				}

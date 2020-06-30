@@ -9,7 +9,7 @@ namespace WalletWasabi.Gui
 	{
 		public App()
 		{
-			Name = "Wasabi Wallet";
+			Name = "Mustard Wallet for Litecoin";
 
 			DataContext = new ApplicationViewModel();
 		}

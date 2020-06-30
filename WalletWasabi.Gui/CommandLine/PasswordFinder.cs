@@ -25,7 +25,7 @@ namespace WalletWasabi.Gui.CommandLine
 			BitcoinEncryptedSecretNoEC encryptedSecret;
 			try
 			{
-				encryptedSecret = new BitcoinEncryptedSecretNoEC(secret);
+				encryptedSecret = new BitcoinEncryptedSecretNoEC(secret, NBitcoin.Altcoins.Litecoin.Instance.Mainnet);
 			}
 			catch (FormatException)
 			{

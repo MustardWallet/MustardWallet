@@ -47,7 +47,7 @@ namespace WalletWasabi.Blockchain.BlockFilters
 			IoHelpers.EnsureContainingDirectoryExists(IndexFilePath);
 			if (File.Exists(IndexFilePath))
 			{
-				if (RpcClient.Network == Network.RegTest)
+				if (RpcClient.Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 				{
 					File.Delete(IndexFilePath); // RegTest is not a global ledger, better to delete it.
 				}

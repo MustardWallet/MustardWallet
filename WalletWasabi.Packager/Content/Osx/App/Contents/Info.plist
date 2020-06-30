@@ -15,11 +15,11 @@
 	<key>CFBundleVersion</key>
 	<string>?</string>
 	<key>CFBundleExecutable</key>
-	<string>wassabee</string>
+	<string>mustardwalletltc</string>
 	<key>CFBundleName</key>
 	<string>Wasabi Wallet</string>
 	<key>CFBundleIdentifier</key>
-	<string>zksnacks.wasabiwallet</string>
+	<string>mustardwallet.mustardwalletltc</string>
 	<key>NSHighResolutionCapable</key>
 	<true/>
 	<key>NSAppleScriptEnabled</key>

@@ -7,12 +7,12 @@
     </ComponentGroup>
 
     <DirectoryRef Id="INSTALLFOLDER" FileSource="SourceDir">
-      <Component Id="StartMenuShortcut" Guid="{50CAF59B-0B66-4CA3-8D92-C96591A707AD}" Win64="yes">
+      <Component Id="StartMenuShortcut" Guid="{928EF81E-CFA3-FCF9-59F3-D9EA5364F0B7}" Win64="yes">
         <Shortcut
           Id="StartMenuShortcut"
           Name="!(loc.ProductName)"
           Description="!(loc.Description)"
-          Target="[INSTALLFOLDER]wassabee.exe"
+          Target="[INSTALLFOLDER]mustardwalletltc.exe"
           Directory="InstallProgramMenuFolder"
           WorkingDirectory="INSTALLFOLDER"
           Icon="icon.ico" />
@@ -20,12 +20,12 @@
         <RemoveFolder Id="RemoveStartMenu" Directory="InstallProgramMenuFolder" On="uninstall" />
       </Component>
 
-      <Component Id="DesktopShortcut" Guid="{FD3D13B1-AA09-495F-A1DE-0E50A010DDF6}" Win64="yes">
+      <Component Id="DesktopShortcut" Guid="{017780E3-03C1-68EC-DB93-78B197123000}" Win64="yes">
         <Shortcut
           Id="DesktopShortcut"
           Name="!(loc.ProductName)"
           Description="!(loc.Description)"
-          Target="[INSTALLFOLDER]wassabee.exe"
+          Target="[INSTALLFOLDER]mustardwalletltc.exe"
           Directory="DesktopFolder"
           WorkingDirectory="INSTALLFOLDER"
           Icon="icon.ico" />

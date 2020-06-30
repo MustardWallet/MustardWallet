@@ -24,7 +24,7 @@ namespace WalletWasabi.Packager
 		public const bool DoRestoreProgramCs = false;
 
 		public const string PfxPath = "C:\\digicert.pfx";
-		public const string ExecutableName = "wassabee";
+		public const string ExecutableName = "mustardwalletltc";
 
 		// https://docs.microsoft.com/en-us/dotnet/articles/core/rid-catalog
 		// BOTTLENECKS:
@@ -202,10 +202,10 @@ namespace WalletWasabi.Packager
 					string publishedFolder = Path.Combine(BinDistDirectory, target);
 
 					Console.WriteLine("Move created .msi");
-					var msiPath = Path.Combine(WixProjectDirectory, "bin", "Release", "Wasabi.msi");
+					var msiPath = Path.Combine(WixProjectDirectory, "bin", "Release", "MustardWalletLTC.msi");
 					if (!File.Exists(msiPath))
 					{
-						throw new Exception(".msi does not exist. Expected path: Wasabi.msi.");
+						throw new Exception(".msi does not exist. Expected path: MustardWalletLTC.msi.");
 					}
 					var msiFileName = Path.GetFileNameWithoutExtension(msiPath);
 					var newMsiPath = Path.Combine(BinDistDirectory, $"{msiFileName}-{VersionPrefix}.msi");
@@ -221,7 +221,7 @@ namespace WalletWasabi.Packager
 						WorkingDirectory = BinDistDirectory
 					}))
 					{
-						process.StandardInput.WriteLine($"signtool sign /d \"Wasabi Wallet\" /f \"{PfxPath}\" /p {pfxPassword} /t http://timestamp.digicert.com /a \"{newMsiPath}\" && exit");
+						process.StandardInput.WriteLine($"signtool sign /d \"Mustard Wallet for Litecoin\" /f \"{PfxPath}\" /p {pfxPassword} /t http://timestamp.digicert.com /a \"{newMsiPath}\" && exit");
 						process.WaitForExit();
 					}
 
@@ -230,12 +230,12 @@ namespace WalletWasabi.Packager
 				}
 				else if (target.StartsWith("osx", StringComparison.OrdinalIgnoreCase))
 				{
-					string dmgFilePath = Path.Combine(BinDistDirectory, $"Wasabi-{VersionPrefix}.dmg");
+					string dmgFilePath = Path.Combine(BinDistDirectory, $"MustardWalletLTC-{VersionPrefix}.dmg");
 					if (!File.Exists(dmgFilePath))
 					{
 						throw new Exception(".dmg does not exist.");
 					}
-					string zipFilePath = Path.Combine(BinDistDirectory, $"Wasabi-osx-{VersionPrefix}.zip");
+					string zipFilePath = Path.Combine(BinDistDirectory, $"MustardWalletLTC-osx-{VersionPrefix}.zip");
 					if (File.Exists(zipFilePath))
 					{
 						File.Delete(zipFilePath);
@@ -467,7 +467,7 @@ namespace WalletWasabi.Packager
 						continue;
 					}
 
-					ZipFile.CreateFromDirectory(currentBinDistDirectory, Path.Combine(BinDistDirectory, $"Wasabi-osx-{VersionPrefix}.zip"));
+					ZipFile.CreateFromDirectory(currentBinDistDirectory, Path.Combine(BinDistDirectory, $"MustardWalletLTC-osx-{VersionPrefix}.zip"));
 
 					IoHelpers.TryDeleteDirectoryAsync(currentBinDistDirectory).GetAwaiter().GetResult();
 					Console.WriteLine($"Deleted {currentBinDistDirectory}");
@@ -485,7 +485,7 @@ namespace WalletWasabi.Packager
 					{
 						throw new Exception($"{publishedFolder} does not exist.");
 					}
-					var newFolderName = $"Wasabi-{VersionPrefix}";
+					var newFolderName = $"MustardWalletLTC-{VersionPrefix}";
 					var newFolderPath = Path.Combine(BinDistDirectory, newFolderName);
 					Directory.Move(publishedFolder, newFolderPath);
 					publishedFolder = newFolderPath;
@@ -502,7 +502,7 @@ namespace WalletWasabi.Packager
 						$"sudo mount -t drvfs {driveLetterUpper}: /mnt/{driveLetterLower} -o metadata",
 						$"cd {linuxPath}",
 						$"sudo find ./{newFolderName} -type f -exec chmod 644 {{}} \\;",
-						$"sudo find ./{newFolderName} -type f \\( -name 'wassabee' -o -name 'hwi' -o -name 'bitcoind' \\) -exec chmod +x {{}} \\;",
+						$"sudo find ./{newFolderName} -type f \\( -name 'mustardwalletltc' -o -name 'hwi' -o -name 'litecoind' \\) -exec chmod +x {{}} \\;",
 						$"tar -pczvf {newFolderName}.tar.gz {newFolderName}"
 					};
 					string arguments = string.Join(" && ", commands);
@@ -534,7 +534,10 @@ namespace WalletWasabi.Packager
 					var debianFolderRelativePath = Path.Combine(debFolderRelativePath, "DEBIAN");
 					var debianFolderPath = Path.Combine(BinDistDirectory, debianFolderRelativePath);
 					Directory.CreateDirectory(debianFolderPath);
-					newFolderName = "wasabiwallet";
+					// If we build the Linux release on Windows , then MustardWalletLTC == mustardwalletltc , which
+					// causes a conflict between file and folder name of /usr/local/bin/mustardwalletltc
+					// That's why the folder name in the .deb build is /usr/local/bin/MustardWallet-LTC :
+					newFolderName = "MustardWallet-LTC";
 					var linuxWasabiWalletFolder = Tools.LinuxPathCombine(linuxUsrLocalBinFolder, newFolderName);
 					var newFolderRelativePath = Path.Combine(debUsrLocalBinFolderRelativePath, newFolderName);
 					newFolderPath = Path.Combine(BinDistDirectory, newFolderRelativePath);
@@ -559,31 +562,32 @@ namespace WalletWasabi.Packager
 					var controlFileContent = $"Package: {ExecutableName}\n" +
 						$"Priority: optional\n" +
 						$"Section: utils\n" +
-						$"Maintainer: nopara73 <adam.ficsor73@gmail.com>\n" +
+						$"Maintainer: Gabriel Krieger <gabrielkrieger@protonmail.com>\n" +
 						$"Version: {VersionPrefix}\n" +
-						$"Homepage: http://wasabiwallet.io\n" +
-						$"Vcs-Git: git://github.com/zkSNACKs/WalletWasabi.git\n" +
-						$"Vcs-Browser: https://github.com/zkSNACKs/WalletWasabi\n" +
+						$"Homepage: http://MustardWallet.com\n" +
+						$"Vcs-Git: git://github.com/MustardWallet/MustardWalletLTC.git\n" +
+						$"Vcs-Browser: https://github.com/MustardWallet/MustardWalletLTC\n" +
 						$"Architecture: amd64\n" +
 						$"License: Open Source (MIT)\n" +
 						$"Installed-Size: {installedSizeKb}\n" +
-						$"Description: open-source, non-custodial, privacy focused Bitcoin wallet\n" +
+						$"Description: open-source, non-custodial, privacy focused Litecoin wallet , based on Wasabi Wallet for Bitcoin .\n" +
 						$"  Built-in Tor, CoinJoin, PayJoin and Coin Control features.\n";
+						$"  Based on Wasabi Wallet for Bitcoin .\n";
 
 					File.WriteAllText(controlFilePath, controlFileContent, Encoding.ASCII);
 
 					var desktopFilePath = Path.Combine(debUsrAppFolderPath, $"{ExecutableName}.desktop");
 					var desktopFileContent = $"[Desktop Entry]\n" +
 						$"Type=Application\n" +
-						$"Name=Wasabi Wallet\n" +
-						$"StartupWMClass=Wasabi Wallet\n" +
-						$"GenericName=Bitcoin Wallet\n" +
-						$"Comment=Privacy focused Bitcoin wallet.\n" +
+						$"Name=Mustard Wallet for Litecoin\n" +
+						$"StartupWMClass=Mustard Wallet for Litecoin\n" +
+						$"GenericName=Litecoin Wallet\n" +
+						$"Comment=Privacy focused Litecoin wallet. Based on Wasabi Wallet for Bitcoin .\n" +
 						$"Icon={ExecutableName}\n" +
 						$"Terminal=false\n" +
 						$"Exec={ExecutableName}\n" +
 						$"Categories=Office;Finance;\n" +
-						$"Keywords=bitcoin;wallet;crypto;blockchain;wasabi;privacy;anon;awesome;qwe;asd;\n";
+						$"Keywords=litecoin;wallet;crypto;blockchain;mustard;wasabi;privacy;anon;\n";
 
 					File.WriteAllText(desktopFilePath, desktopFileContent, Encoding.ASCII);
 
@@ -603,7 +607,7 @@ namespace WalletWasabi.Packager
 						"sudo mount -t drvfs C: /mnt/c -o metadata",
 						$"cd {linuxPath}",
 						$"sudo find {Tools.LinuxPath(newFolderRelativePath)} -type f -exec chmod 644 {{}} \\;",
-						$"sudo find {Tools.LinuxPath(newFolderRelativePath)} -type f \\( -name 'wassabee' -o -name 'hwi' -o -name 'bitcoind' \\) -exec chmod +x {{}} \\;",
+						$"sudo find {Tools.LinuxPath(newFolderRelativePath)} -type f \\( -name 'mustardwalletltc' -o -name 'hwi' -o -name 'litecoind' \\) -exec chmod +x {{}} \\;",
 						$"sudo chmod -R 0775 {Tools.LinuxPath(debianFolderRelativePath)}",
 						$"sudo chmod -R 0644 {debDestopFileLinuxPath}",
 						$"dpkg --build {Tools.LinuxPath(debFolderRelativePath)} $(pwd)"
@@ -623,7 +627,7 @@ namespace WalletWasabi.Packager
 					IoHelpers.TryDeleteDirectoryAsync(debFolderPath).GetAwaiter().GetResult();
 
 					string oldDeb = Path.Combine(BinDistDirectory, $"{ExecutableName}_{VersionPrefix}_amd64.deb");
-					string newDeb = Path.Combine(BinDistDirectory, $"Wasabi-{VersionPrefix}.deb");
+					string newDeb = Path.Combine(BinDistDirectory, $"MustardWalletLTC-{VersionPrefix}.deb");
 					File.Move(oldDeb, newDeb);
 
 					IoHelpers.TryDeleteDirectoryAsync(publishedFolder).GetAwaiter().GetResult();

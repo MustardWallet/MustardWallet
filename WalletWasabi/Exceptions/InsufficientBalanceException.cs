@@ -5,7 +5,7 @@ namespace WalletWasabi.Exceptions
 {
 	public class InsufficientBalanceException : Exception
 	{
-		public InsufficientBalanceException(Money minimum, Money actual) : base($"Needed: {minimum.ToString(false, true)} BTC, got only: {actual.ToString(false, true)} BTC.")
+		public InsufficientBalanceException(Money minimum, Money actual) : base($"Needed: {minimum.ToString(false, true)} LTC, got only: {actual.ToString(false, true)} LTC.")
 		{
 			Minimum = minimum ?? Money.Zero;
 			Actual = actual ?? Money.Zero;

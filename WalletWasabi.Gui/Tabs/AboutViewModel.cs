@@ -45,17 +45,15 @@ namespace WalletWasabi.Gui.Tabs
 		public Version BitcoinCoreVersion => Constants.BitcoinCoreVersion;
 		public Version HwiVersion => Constants.HwiVersion;
 
-		public string ClearnetLink => "https://wasabiwallet.io/";
+		public string ClearnetLink => "https://MustardWallet.com/";
 
-		public string TorLink => "http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion";
+		public string TorLink => "http://p5d45yv2wobyqaj7.onion";
 
-		public string SourceCodeLink => "https://github.com/zkSNACKs/WalletWasabi/";
+		public string SourceCodeLink => "https://github.com/MustardWallet/MustardWalletLTC/";
 
-		public string StatusPageLink => "https://stats.uptimerobot.com/YQqGyUL8A7";
+		public string UserSupportLink => "https://www.reddit.com/r/MustardWallet/";
 
-		public string UserSupportLink => "https://www.reddit.com/r/WasabiWallet/";
-
-		public string BugReportLink => "https://github.com/zkSNACKs/WalletWasabi/issues/";
+		public string BugReportLink => "https://github.com/MustardWallet/MustardWalletLTC/issues/";
 
 		public string FAQLink => "https://docs.wasabiwallet.io/FAQ/";
 

@@ -135,9 +135,9 @@ namespace WalletWasabi.Blockchain.TransactionBroadcasting
 				// Wait until it arrives to at least two other nodes.
 				// If something's wrong, fall back broadcasting with rpc, then backend.
 
-				if (Network == Network.RegTest)
+				if (Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 				{
-					throw new InvalidOperationException($"Transaction broadcasting to nodes does not work in {Network.RegTest}.");
+					throw new InvalidOperationException($"Transaction broadcasting to nodes does not work in {NBitcoin.Altcoins.Litecoin.Instance.Regtest}.");
 				}
 
 				Node node = Nodes.ConnectedNodes.RandomElement();

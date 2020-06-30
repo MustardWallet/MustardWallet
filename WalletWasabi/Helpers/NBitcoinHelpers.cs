@@ -53,23 +53,24 @@ namespace WalletWasabi.Helpers
 			ExtPubKey epk;
 			try
 			{
-				epk = ExtPubKey.Parse(extPubKeyString, Network.Main); // Starts with "ExtPubKey": "xpub...
+				epk = ExtPubKey.Parse(extPubKeyString, NBitcoin.Altcoins.Litecoin.Instance.Mainnet); // Starts with "ExtPubKey": "xpub...
 			}
 			catch
 			{
 				try
 				{
-					epk = ExtPubKey.Parse(extPubKeyString, Network.TestNet); // Starts with "ExtPubKey": "xpub...
+					epk = ExtPubKey.Parse(extPubKeyString, NBitcoin.Altcoins.Litecoin.Instance.Testnet); // Starts with "ExtPubKey": "xpub...
 				}
 				catch
 				{
 					try
 					{
-						epk = ExtPubKey.Parse(extPubKeyString, Network.RegTest); // Starts with "ExtPubKey": "xpub...
+						epk = ExtPubKey.Parse(extPubKeyString, NBitcoin.Altcoins.Litecoin.Instance.Regtest); // Starts with "ExtPubKey": "xpub...
 					}
 					catch
 					{
 						// Try hex, Old wallet format was like this.
+						// Doesn't make sense for LTC Litecoin because there's no legacy wallet format to support :
 						epk = new ExtPubKey(ByteHelpers.FromHex(extPubKeyString)); // Starts with "ExtPubKey": "hexbytes...
 					}
 				}
@@ -85,17 +86,17 @@ namespace WalletWasabi.Helpers
 			BitcoinAddress ba;
 			try
 			{
-				ba = BitcoinAddress.Create(bitcoinAddressString, Network.Main);
+				ba = BitcoinAddress.Create(bitcoinAddressString, NBitcoin.Altcoins.Litecoin.Instance.Mainnet);
 			}
 			catch
 			{
 				try
 				{
-					ba = BitcoinAddress.Create(bitcoinAddressString, Network.TestNet);
+					ba = BitcoinAddress.Create(bitcoinAddressString, NBitcoin.Altcoins.Litecoin.Instance.Testnet);
 				}
 				catch
 				{
-					ba = BitcoinAddress.Create(bitcoinAddressString, Network.RegTest);
+					ba = BitcoinAddress.Create(bitcoinAddressString, NBitcoin.Altcoins.Litecoin.Instance.Regtest);
 				}
 			}
 

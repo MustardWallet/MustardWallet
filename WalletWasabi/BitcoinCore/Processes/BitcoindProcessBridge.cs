@@ -7,7 +7,7 @@ namespace WalletWasabi.BitcoinCore.Processes
 {
 	public class BitcoindProcessBridge : ProcessBridge
 	{
-		public BitcoindProcessBridge() : base(MicroserviceHelpers.GetBinaryPath("bitcoind"))
+		public BitcoindProcessBridge() : base(MicroserviceHelpers.GetBinaryPath("litecoind"))
 		{
 		}
 	}

@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- This file is untested with Mustard Wallet for Litecoin , look at build_on_windows.sh instead ... -->
 <Project ToolsVersion="4.0" DefaultTargets="Build" InitialTargets="EnsureWixToolsetInstalled" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -6,7 +7,7 @@
     <ProductVersion>3.10</ProductVersion>
     <ProjectGuid>54654468-4f58-4253-84bd-6f53a8d3d2c4</ProjectGuid>
     <SchemaVersion>2.0</SchemaVersion>
-    <OutputName>Wasabi</OutputName>
+    <OutputName>MustardWalletLTC</OutputName>
     <OutputType>Package</OutputType>
     <Cultures>;</Cultures>
   </PropertyGroup>

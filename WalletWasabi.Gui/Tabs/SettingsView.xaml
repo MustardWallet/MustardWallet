@@ -19,7 +19,7 @@
       <StackPanel Margin="30" Spacing="10">
         <Grid Classes="content">
           <StackPanel Orientation="Vertical" Spacing="30">
-            <controls:GroupBox Title="Bitcoin" TextBlock.FontSize="16" Padding="10" Margin="0 5 10 5">
+            <controls:GroupBox Title="Litecoin" TextBlock.FontSize="16" Padding="10" Margin="0 5 10 5">
               <StackPanel Orientation="Vertical" Spacing="5">
                 <StackPanel Margin="0 10" Spacing="5">
                   <TextBlock>Network</TextBlock>
@@ -31,17 +31,17 @@
                     </ComboBox.ItemTemplate>
                   </ComboBox>
                 </StackPanel>
-                <controls:GroupBox Title="{Binding BitcoinCoreVersion, StringFormat=Local Bitcoin Core/Knots v\{0\}, Converter={StaticResource VersionStringConverter}}" TextBlock.FontSize="16" Padding="10" Margin="0 5 10 5">
+                <controls:GroupBox Title="{Binding BitcoinCoreVersion, StringFormat=Local Litecoin Core v\{0\}, Converter={StaticResource VersionStringConverter}}" TextBlock.FontSize="16" Padding="10" Margin="0 5 10 5">
                   <StackPanel Orientation="Vertical" Spacing="5">
                     <TextBlock Classes="warningMessage">Work in progress...</TextBlock>
-                    <TextBlock>Use your own Bitcoin Core or Wasabi's built-in Bitcoin Knots.</TextBlock>
-                    <TextBlock>Expect high CPU, network usage and 300+ GB disk space requirement.</TextBlock>
+                    <TextBlock>Use your own Litecoin Core or Mustard Wallet's built-in Litecoin Core Daemon.</TextBlock>
+                    <TextBlock>Expect high CPU, network usage and 30+ GB disk space requirement.</TextBlock>
                     <StackPanel Margin="0 10" Orientation="Horizontal" Spacing="5">
                       <ToggleButton IsChecked="{Binding StartLocalBitcoinCoreOnStartup}" Content="{Binding StartLocalBitcoinCoreOnStartup, Converter={StaticResource BooleanStringConverter}, ConverterParameter=On:Off}" Margin="0 0 10 0" />
-                      <TextBlock VerticalAlignment="Center">Run Bitcoin Knots at Wasabi's startup.</TextBlock>
+                      <TextBlock VerticalAlignment="Center">Run Litecoin Core at Mustard Wallet's startup.</TextBlock>
                     </StackPanel>
                     <StackPanel Margin="0 10" Spacing="5" IsVisible="{Binding StartLocalBitcoinCoreOnStartup}">
-                      <TextBlock>Bitcoin Core or Bitcoin Knots Data Folder</TextBlock>
+                      <TextBlock>Litecoin Core Data Folder</TextBlock>
                       <TextBox Text="{Binding LocalBitcoinCoreDataDir}">
                         <i:Interaction.Behaviors>
                           <behaviors:CommandOnLostFocusBehavior Command="{Binding TextBoxLostFocusCommand}" />
@@ -50,15 +50,15 @@
                     </StackPanel>
                     <StackPanel Margin="0 10" Orientation="Horizontal" Spacing="5" IsVisible="{Binding StartLocalBitcoinCoreOnStartup}">
                       <ToggleButton IsChecked="{Binding StopLocalBitcoinCoreOnShutdown}" Content="{Binding StopLocalBitcoinCoreOnShutdown, Converter={StaticResource BooleanStringConverter}, ConverterParameter=On:Off}" Margin="0 0 10 0" />
-                      <TextBlock VerticalAlignment="Center">Stop Bitcoin Knots when Wasabi is shut down.</TextBlock>
+                      <TextBlock VerticalAlignment="Center">Stop Litecoin Core when Mustard Wallet is shut down.</TextBlock>
                     </StackPanel>
                   </StackPanel>
                 </controls:GroupBox>
                 <controls:GroupBox IsVisible="{Binding !StartLocalBitcoinCoreOnStartup}" Title="{Binding Network, StringFormat=Alternative Block Source for \{0\}, Converter={StaticResource NetworkStringConverter}}" TextBlock.FontSize="16" Padding="10" Margin="0 5 10 5">
                   <StackPanel Orientation="Vertical" Spacing="5">
-                    <TextBlock>Set Wasabi to download blocks from a full node you control.</TextBlock>
+                    <TextBlock>Set Mustard Wallet to download blocks from a full node you control.</TextBlock>
                     <StackPanel Margin="0 10" Spacing="5">
-                      <TextBlock>Bitcoin P2P Endpoint</TextBlock>
+                      <TextBlock>Litecoin P2P Endpoint</TextBlock>
                       <TextBox Text="{Binding BitcoinP2pEndPoint}">
                         <i:Interaction.Behaviors>
                           <behaviors:CommandOnLostFocusBehavior Command="{Binding TextBoxLostFocusCommand}" />
@@ -89,7 +89,7 @@
               <StackPanel Orientation="Vertical" Spacing="5">
                 <StackPanel Margin="0 10" Orientation="Horizontal" Spacing="5">
                   <ToggleButton IsChecked="{Binding Autocopy}" Content="{Binding Autocopy, Converter={StaticResource BooleanStringConverter}, ConverterParameter=On:Off}" Margin="0 0 10 0" />
-                  <TextBlock VerticalAlignment="Center">Auto Copy/Paste bitcoin addresses, bitcoin urls, etc...</TextBlock>
+                  <TextBlock VerticalAlignment="Center">Auto Copy/Paste Litecoin addresses, urls, etc...</TextBlock>
                 </StackPanel>
                 <StackPanel Margin="0 10" Orientation="Horizontal" Spacing="5">
                   <ToggleButton IsChecked="{Binding CustomFee}" Content="{Binding CustomFee, Converter={StaticResource BooleanStringConverter}, ConverterParameter=On:Off}" Margin="0 0 10 0" />
@@ -147,7 +147,7 @@
             <controls:GroupBox Title="Other settings" TextBlock.FontSize="16" Padding="10" Margin="0 5 10 5">
               <StackPanel Orientation="Vertical" Spacing="5">
                 <StackPanel Margin="0 10" Spacing="5">
-                  <TextBlock ToolTip.Tip="Coins under the dust threshold won't appear in the coin lists.">Dust Threshold (BTC)</TextBlock>
+                  <TextBlock ToolTip.Tip="Coins under the dust threshold won't appear in the coin lists.">Dust Threshold (LTC)</TextBlock>
                   <TextBox Text="{Binding DustThreshold}">
                     <i:Interaction.Behaviors>
                       <behaviors:CommandOnLostFocusBehavior Command="{Binding TextBoxLostFocusCommand}" />

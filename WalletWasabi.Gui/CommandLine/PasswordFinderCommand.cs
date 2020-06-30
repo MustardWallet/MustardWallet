@@ -22,7 +22,7 @@ namespace WalletWasabi.Gui.CommandLine
 				"usage: findpassword --wallet:WalletName --language:lang --numbers:[TRUE|FALSE] --symbols:[TRUE|FALSE]",
 				"",
 				"Tries to find typing mistakes in the user password by brute forcing it char by char.",
-				"eg: ./wassabee findpassword --wallet:MyWalletName --numbers:false --symbols:true",
+				"eg: ./mustardwalletltc findpassword --wallet:MyWalletName --numbers:false --symbols:true",
 				"",
 				{ "w|wallet=", "The name of the wallet file.", x => WalletName = x },
 				{ "s|secret=", "You can specify an encrypted secret key instead of wallet. Example of encrypted secret: 6PYTMDmkxQrSv8TK4761tuKrV8yFwPyZDqjJafcGEiLBHiqBV6WviFxJV4", x => EncryptedSecret = Guard.Correct(x) },

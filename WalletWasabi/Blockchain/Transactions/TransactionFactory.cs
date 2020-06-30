@@ -200,7 +200,7 @@ namespace WalletWasabi.Blockchain.Transactions
 			if (feePc > 1)
 			{
 				Logger.LogInfo($"The transaction fee is {feePc:0.#}% of the sent amount.{Environment.NewLine}"
-					+ $"Sending:\t {totalOutgoingAmountNoFee.ToString(fplus: false, trimExcessZero: true)} BTC.{Environment.NewLine}"
+					+ $"Sending:\t {totalOutgoingAmountNoFee.ToString(fplus: false, trimExcessZero: true)} LTC.{Environment.NewLine}"
 					+ $"Fee:\t\t {fee.Satoshi} Satoshi.");
 			}
 			if (feePc > 100)

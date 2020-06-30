@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WixLocalization Culture="en-us" xmlns="http://schemas.microsoft.com/wix/2006/localization">
 
-  <String Id="ProductName">Wasabi Wallet</String>
-  <String Id="ProductNameFolder">WasabiWallet</String>
-  <String Id="Company">zkSNACKs</String>
+  <String Id="ProductName">Mustard Wallet for Litecoin</String>
+  <String Id="ProductNameFolder">MustardWalletLTC</String>
+  <String Id="Company">MustardWallet</String>
 
   <String Id="Language">1033</String>
 
-  <String Id="Description">Privacy focused Bitcoin wallet.</String>
+  <String Id="Description">Privacy focused Litecoin wallet , based on Wasabi Walelt for Bitcoin .</String>
   <String Id="Keywords">bitcoin,cryptocurrency,blockchain,privacy,fungibility,anonymity</String>
   <String Id="Comments">Easy Peasy Lemon Squeezey</String>
 </WixLocalization>

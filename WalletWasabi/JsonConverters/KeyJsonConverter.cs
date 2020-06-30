@@ -33,7 +33,7 @@ namespace WalletWasabi.JsonConverters
 		public override void WriteJson(JsonWriter writer, object value, JsonSerializer serializer)
 		{
 			var key = (Key)value;
-			writer.WriteValue(key.GetWif(Network.Main));
+			writer.WriteValue(key.GetWif(NBitcoin.Altcoins.Litecoin.Instance.Mainnet));
 		}
 	}
 }

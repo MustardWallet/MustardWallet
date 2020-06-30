@@ -25,9 +25,9 @@ namespace WalletWasabi.Backend
 
 			var content = await File.ReadAllTextAsync(path);
 
-			content = content.Replace("http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion", "https://wasabiwallet.io", StringComparison.Ordinal);
+			content = content.Replace("http://p5d45yv2wobyqaj7.onion", "https://MustardWallet.com", StringComparison.Ordinal);
 			content = content.Replace("https://blockstream.info", "http://explorerzydxu5ecjrkwceayqybizmpjjznk5izmitf2modhcusuqlid.onion", StringComparison.Ordinal);
-			content = content.Replace("https://wasabiwallet.io/swagger/", "http://wasabiukrxmkdgve5kynjztuovbg43uxcbcxn6y2okcrsg7gb6jdmbad.onion/swagger/", StringComparison.Ordinal);
+			content = content.Replace("https://MustardWallet.com/swagger/", "http://p5d45yv2wobyqaj7.onion/swagger/", StringComparison.Ordinal);
 
 			await File.WriteAllTextAsync(onionPath, content);
 		}

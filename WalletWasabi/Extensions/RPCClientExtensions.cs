@@ -41,7 +41,7 @@ namespace NBitcoin.RPC
 
 		public static async Task<EstimateSmartFeeResponse> EstimateSmartFeeAsync(this IRPCClient rpc, int confirmationTarget, EstimateSmartFeeMode estimateMode = EstimateSmartFeeMode.Conservative, bool simulateIfRegTest = false, bool tryOtherFeeRates = true)
 		{
-			if (simulateIfRegTest && rpc.Network == Network.RegTest)
+			if (simulateIfRegTest && rpc.Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				return SimulateRegTestFeeEstimation(confirmationTarget, estimateMode);
 			}
@@ -78,7 +78,7 @@ namespace NBitcoin.RPC
 
 		public static async Task<EstimateSmartFeeResponse> TryEstimateSmartFeeAsync(this IRPCClient rpc, int confirmationTarget, EstimateSmartFeeMode estimateMode = EstimateSmartFeeMode.Conservative, bool simulateIfRegTest = false, bool tryOtherFeeRates = false)
 		{
-			if (simulateIfRegTest && rpc.Network == Network.RegTest)
+			if (simulateIfRegTest && rpc.Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 			{
 				return SimulateRegTestFeeEstimation(confirmationTarget, estimateMode);
 			}

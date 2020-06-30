@@ -16,7 +16,7 @@ namespace WalletWasabi.JsonConverters
 		public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)
 		{
 			var txHex = reader.Value.ToString();
-			var tx = Transaction.Parse(txHex, Network.Main);
+			var tx = Transaction.Parse(txHex, NBitcoin.Altcoins.Litecoin.Instance.Mainnet);
 			return tx;
 		}
 

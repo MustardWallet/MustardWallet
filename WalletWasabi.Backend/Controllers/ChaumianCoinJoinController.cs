@@ -151,7 +151,7 @@ namespace WalletWasabi.Backend.Controllers
 					if (request.ChangeOutputAddress.Network != Network)
 					{
 						// RegTest and TestNet address formats are sometimes the same.
-						if (Network == Network.Main)
+						if (Network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 						{
 							return BadRequest($"Invalid ChangeOutputAddress Network.");
 						}
@@ -275,7 +275,7 @@ namespace WalletWasabi.Backend.Controllers
 					Money changeAmount = (inputSum - (round.MixingLevels.GetBaseDenomination() + networkFeeToPayAfterBaseDenomination));
 					if (changeAmount < Money.Zero)
 					{
-						return BadRequest($"Not enough inputs are provided. Fee to pay: {networkFeeToPayAfterBaseDenomination.ToString(false, true)} BTC. Round denomination: {round.MixingLevels.GetBaseDenomination().ToString(false, true)} BTC. Only provided: {inputSum.ToString(false, true)} BTC.");
+						return BadRequest($"Not enough inputs are provided. Fee to pay: {networkFeeToPayAfterBaseDenomination.ToString(false, true)} LTC. Round denomination: {round.MixingLevels.GetBaseDenomination().ToString(false, true)} LTC. Only provided: {inputSum.ToString(false, true)} LTC.");
 					}
 					acceptedBlindedOutputScripts.Add(blindedOutputs.First());
 
@@ -522,7 +522,7 @@ namespace WalletWasabi.Backend.Controllers
 			if (request.OutputAddress.Network != Network)
 			{
 				// RegTest and TestNet address formats are sometimes the same.
-				if (Network == Network.Main)
+				if (Network == NBitcoin.Altcoins.Litecoin.Instance.Mainnet)
 				{
 					return BadRequest($"Invalid OutputAddress Network.");
 				}

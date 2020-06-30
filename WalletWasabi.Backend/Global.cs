@@ -28,7 +28,7 @@ namespace WalletWasabi.Backend
 
 		public Global(string dataDir)
 		{
-			DataDir = dataDir ?? EnvironmentHelpers.GetDataDir(Path.Combine("WalletWasabi", "Backend"));
+			DataDir = dataDir ?? EnvironmentHelpers.GetDataDir(Path.Combine("MustardWalletLTC", "Backend"));
 			HostedServices = new HostedServices();
 		}
 
@@ -115,13 +115,13 @@ namespace WalletWasabi.Backend
 				var blockchainInfo = await RpcClient.GetBlockchainInfoAsync();
 
 				var blocks = blockchainInfo.Blocks;
-				if (blocks == 0 && Config.Network != Network.RegTest)
+				if (blocks == 0 && Config.Network != NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 				{
 					throw new NotSupportedException($"{nameof(blocks)} == 0");
 				}
 
 				var headers = blockchainInfo.Headers;
-				if (headers == 0 && Config.Network != Network.RegTest)
+				if (headers == 0 && Config.Network != NBitcoin.Altcoins.Litecoin.Instance.Regtest)
 				{
 					throw new NotSupportedException($"{nameof(headers)} == 0");
 				}
@@ -141,14 +141,14 @@ namespace WalletWasabi.Backend
 
 				Logger.LogInfo($"{Constants.BuiltinBitcoinNodeName} fee estimation is working.");
 
-				if (Config.Network == Network.RegTest) // Make sure there's at least 101 block, if not generate it
+				if (Config.Network == NBitcoin.Altcoins.Litecoin.Instance.Regtest) // Make sure there's at least 101 block, if not generate it
 				{
 					if (blocks < 101)
 					{
 						var generateBlocksResponse = await RpcClient.GenerateAsync(101);
 						if (generateBlocksResponse is null)
 						{
-							throw new NotSupportedException($"{Constants.BuiltinBitcoinNodeName} cannot generate blocks on the {Network.RegTest}.");
+							throw new NotSupportedException($"{Constants.BuiltinBitcoinNodeName} cannot generate blocks on the {NBitcoin.Altcoins.Litecoin.Instance.Regtest}.");
 						}
 
 						blockchainInfo = await RpcClient.GetBlockchainInfoAsync();
@@ -157,7 +157,7 @@ namespace WalletWasabi.Backend
 						{
 							throw new NotSupportedException($"{nameof(blocks)} == 0");
 						}
-						Logger.LogInfo($"Generated 101 block on {Network.RegTest}. Number of blocks {blocks}.");
+						Logger.LogInfo($"Generated 101 block on {NBitcoin.Altcoins.Litecoin.Instance.Regtest}. Number of blocks {blocks}.");
 					}
 				}
 			}

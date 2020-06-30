@@ -49,9 +49,9 @@ namespace WalletWasabi.Backend
 				c.SwaggerDoc($"v{Constants.BackendMajorVersion}", new OpenApiInfo
 				{
 					Version = $"v{Constants.BackendMajorVersion}",
-					Title = "Wasabi Wallet API",
-					Description = "Privacy focused Bitcoin Web API.",
-					License = new OpenApiLicense { Name = "Use under MIT.", Url = new Uri("https://github.com/zkSNACKs/WalletWasabi/blob/master/LICENSE.md") }
+					Title = "Mustard Wallet for Litecoin API",
+					Description = "Privacy focused Litecoin Web API , based on Wasabi Wallet for Bitcoin .",
+					License = new OpenApiLicense { Name = "Use under MIT.", Url = new Uri("https://github.com/MustardWallet/MustardWalletLTC/blob/master/LICENSE.md") }
 				});
 
 				// Set the comments path for the Swagger JSON and UI.
@@ -80,7 +80,7 @@ namespace WalletWasabi.Backend
 			app.UseSwagger();
 
 			// Enable middleware to serve swagger-ui (HTML, JS, CSS, etc.), specifying the Swagger JSON endpoint.
-			app.UseSwaggerUI(c => c.SwaggerEndpoint($"/swagger/v{Constants.BackendMajorVersion}/swagger.json", "Wasabi Wallet API V3"));
+			app.UseSwaggerUI(c => c.SwaggerEndpoint($"/swagger/v{Constants.BackendMajorVersion}/swagger.json", "Mustard Wallet for Litecoin API V3"));
 
 			app.UseRouting();
 
@@ -133,7 +133,7 @@ namespace WalletWasabi.Backend
 				Logger.LogInfo($"{nameof(p2pNode)} is disposed.");
 			}
 
-			Logger.LogSoftwareStopped("Wasabi Backend");
+			Logger.LogSoftwareStopped("Mustard Wallet for Litecoin Backend");
 		}
 	}
 }

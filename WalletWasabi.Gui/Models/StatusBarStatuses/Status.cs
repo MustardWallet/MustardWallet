@@ -28,7 +28,7 @@ namespace WalletWasabi.Gui.Models.StatusBarStatuses
 			{
 				StatusType.Ready => "Ready",
 				StatusType.CriticalUpdate => "THE BACKEND WAS UPGRADED WITH BREAKING CHANGES - PLEASE UPDATE YOUR WASABI WALLET!",
-				StatusType.OptionalUpdate => "A new version of Wasabi Wallet is available.",
+				StatusType.OptionalUpdate => "A new version of Mustard Wallet for Litecoin is available.",
 				StatusType.Connecting => "Connecting...",
 				StatusType.Synchronizing => "Synchronizing...",
 				StatusType.WalletProcessingFilters => "Processing block filters...",

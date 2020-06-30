@@ -56,7 +56,7 @@ namespace WalletWasabi.BitcoinCore
 				coreNode.Network = coreNodeParams.Network;
 				coreNode.MempoolService = coreNodeParams.MempoolService;
 
-				var configPath = Path.Combine(coreNode.DataDir, "bitcoin.conf");
+				var configPath = Path.Combine(coreNode.DataDir, "litecoin.conf");
 				coreNode.Config = new CoreConfig();
 				if (File.Exists(configPath))
 				{
@@ -151,7 +151,7 @@ namespace WalletWasabi.BitcoinCore
 					desiredConfigLines.Add($"{configPrefix}.fallbackfee = {coreNodeParams.FallbackFee.ToString(fplus: false, trimExcessZero: true)}");
 				}
 
-				var sectionComment = $"# The following configuration options were added or modified by Wasabi Wallet.";
+				var sectionComment = $"# The following configuration options were added or modified by Mustard Wallet for Litecoin.";
 				// If the comment is not already present.
 				// And there would be new config entries added.
 				var throwAwayConfig = new CoreConfig(coreNode.Config);
@@ -173,7 +173,7 @@ namespace WalletWasabi.BitcoinCore
 				// If it isn't already running, then we run it.
 				if (await coreNode.RpcClient.TestAsync().ConfigureAwait(false) is null)
 				{
-					Logger.LogInfo("A Bitcoin node is already running.");
+					Logger.LogInfo("A Litecoin node is already running.");
 				}
 				else
 				{
@@ -272,10 +272,10 @@ namespace WalletWasabi.BitcoinCore
 				}
 			}
 
-			Logger.LogInfo("Did not stop the Bitcoin node. Reason:");
+			Logger.LogInfo("Did not stop the Litecoin node. Reason:");
 			if (exThrown is null)
 			{
-				Logger.LogInfo("The Bitcoin node was started externally.");
+				Logger.LogInfo("The Litecoin node was started externally.");
 			}
 			else
 			{

@@ -27,10 +27,11 @@ namespace WalletWasabi.Helpers
 
 		// https://en.bitcoin.it/wiki/Bitcoin
 		// There are a maximum of 2,099,999,997,690,000 Bitcoin elements (called satoshis), which are currently most commonly measured in units of 100,000,000 known as BTC. Stated another way, no more than 21 million BTC can ever be created.
-		public const long MaximumNumberOfSatoshis = 2099999997690000;
+		public const long MaximumNumberOfSatoshis = 2099999997690000 * 4;
 
-		public const int TwentyMinutesConfirmationTarget = 2;
-		public const int OneDayConfirmationTarget = 144;
+		public const int TwentyMinutesConfirmationTarget = 2 * 4;
+		public const int OneDayConfirmationTarget = 144 * 4;
+		// LTC Litecoin block time is 4 times less so confirmation target should be 4 times more but litecoind 0.18 only accepts it between 1 and 1008 , like bitcoind ...
 		public const int SevenDaysConfirmationTarget = 1008;
 
 		public const int BigFileReadWriteBufferSize = 1 * 1024 * 1024;
@@ -40,29 +41,29 @@ namespace WalletWasabi.Helpers
 		public const int DefaultTorControlPort = 9051;
 		public const int DefaultTorBrowserControlPort = 9151;
 
-		public const int DefaultMainNetBitcoinP2pPort = 8333;
-		public const int DefaultTestNetBitcoinP2pPort = 18333;
-		public const int DefaultRegTestBitcoinP2pPort = 18444;
+		public const int DefaultMainNetBitcoinP2pPort = 9333;
+		public const int DefaultTestNetBitcoinP2pPort = 19335;
+		public const int DefaultRegTestBitcoinP2pPort = 19444;
 
-		public const int DefaultMainNetBitcoinCoreRpcPort = 8332;
-		public const int DefaultTestNetBitcoinCoreRpcPort = 18332;
-		public const int DefaultRegTestBitcoinCoreRpcPort = 18443;
+		public const int DefaultMainNetBitcoinCoreRpcPort = 9332;
+		public const int DefaultTestNetBitcoinCoreRpcPort = 19332;
+		public const int DefaultRegTestBitcoinCoreRpcPort = 19443;
 
 		public const double TransactionRBFSignalRate = 0.02; // 2% RBF transactions
 
-		public const decimal DefaultDustThreshold = 0.00005m;
+		public const decimal DefaultDustThreshold = 0.00000001m;
 
-		public const long MaxSatoshisSupply = 2_100_000_000_000_000L;
+		public const long MaxSatoshisSupply = 2_100_000_000_000_000L * 4;
 
 		public const string AlphaNumericCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 		public const string CapitalAlphaNumericCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
 
-		public const string BuiltinBitcoinNodeName = "Bitcoin Knots";
+		public const string BuiltinBitcoinNodeName = "Litecoin";
 
 		public static readonly Version ClientVersion = new Version(1, 1, 12, 0);
 		public static readonly Version HwiVersion = new Version("1.1.2");
-		public static readonly Version BitcoinCoreVersion = new Version("0.20.0");
-		public static readonly Version LegalDocumentsVersion = new Version(2, 0);
+		public static readonly Version BitcoinCoreVersion = new Version("0.18.1");
+		public static readonly Version LegalDocumentsVersion = new Version(3, 0);
 
 		public static readonly NodeRequirement NodeRequirements = new NodeRequirement
 		{
@@ -93,7 +94,7 @@ namespace WalletWasabi.Helpers
 			}
 		};
 
-		public static readonly ExtPubKey FallBackCoordinatorExtPubKey = NBitcoinHelpers.BetterParseExtPubKey("xpub6D2PqhWBAbF3xgfaAUW73KnaCXUroArcgMTzNkNzfVX7ykkSzQGbqaXZeaNyxKbZojAAqDwsne6B7NcVhiTrXbGYrQNq1yF76NkgdonGrEa");
+		public static readonly ExtPubKey FallBackCoordinatorExtPubKey = NBitcoinHelpers.BetterParseExtPubKey("xpub6CvmzEK6nN84HkmAGNDst2bcbCUHQYarwxeKMuE2nDTMa1ZfviF7PzgkAU2WnrSTGUHZHAXATBBJq68LrjdNDCwM68TAoyySvuufvmvbRyC");
 
 		public static string[] UserAgents = new[]
 		{
