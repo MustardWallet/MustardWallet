@@ -28,7 +28,7 @@ namespace WalletWasabi.Backend.Controllers
 		private IExchangeRateProvider ExchangeRateProvider { get; }
 
 		/// <summary>
-		/// Gets exchange rates for one Bitcoin.
+		/// Gets exchange rates for one Litecoin.
 		/// </summary>
 		/// <returns>ExchangeRates[] contains ticker and exchange rate pairs.</returns>
 		/// <response code="200">Returns an array of exchange rates.</response>
