@@ -3,6 +3,14 @@ How to use
 
 Use sha256sum to compute the SHA-256 Hash of your file and compare it with the ones below .
 
+Release v0.1.6.0
+----------------
+73624f01b5a62261d68a94b127e900d8e34822debde7f400fe98944666891634  MustardWalletLTC-0.1.6.0.msi
+70b0d59faabcfe9dfeb45679989b65efe560babe67fbf3a51c84d08b7499f1c9  MustardWalletLTC-0.1.6.deb
+928e6fb9601aabee0e37573773bb8d4281d3160df4b32398049a2d18d10ce832  MustardWalletLTC-linux-0.1.6.tar.gz
+ab14c0022daa787541085094b396fb8e3af87023b62b64dac7052eb0544fb295  MustardWalletLTC-osx-0.1.6.zip
+
+
 Release v0.1.5.0
 ----------------
 
