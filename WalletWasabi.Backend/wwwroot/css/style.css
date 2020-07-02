@@ -268,11 +268,12 @@ section .shader {
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background-image: url("../images/hero-off.jpg?ver=1.1.0");
+  background-image: url("../images/mustard-plant-square.jpg?ver=1.1.0");
   background-size: cover;
   background-position: center;
 }
 
+/* Not used for Litecoin LTC
 .hero .hero-image:after {
   content: '';
   position: absolute;
@@ -287,6 +288,7 @@ section .shader {
   -webkit-animation: hero-flickr 3s linear infinite;
           animation: hero-flickr 3s linear infinite;
 }
+*/
 
 @-webkit-keyframes hero-flickr {
   0%, 4%, 70%, 76% {
