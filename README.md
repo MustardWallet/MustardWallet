@@ -28,7 +28,7 @@ For step by step instructions package installation instructions, see the [docume
 2. Get .NET Core 3.1 SDK: https://www.microsoft.com/net/download
 3. Optionally disable .NET's telemetry by typing `export DOTNET_CLI_TELEMETRY_OPTOUT=1` on Linux and macOS or `setx DOTNET_CLI_TELEMETRY_OPTOUT 1` on Windows.
 
-## Get Wasabi
+## Get Mustard
 
 Clone & Restore & Build
 
