@@ -385,11 +385,14 @@ namespace WalletWasabi.CoinJoin.Coordinator.Rounds
 						}
 
 						// 6. Add Coordinator fee only if > about $3, else just let it to be miner fee.
-						/* This is disabled for Litecoin LTC because its price is not $10k at all ...
+						/* This check is disabled for Litecoin LTC because its price is not $10k at all ...
 						if (coordinatorFee > Money.Coins(0.0003m))
 						{
+						*/
 							transaction.Outputs.AddWithOptimize(coordinatorFee, coordinatorScript);
-						} */
+						/*
+						}
+						*/
 
 						// 7. Try optimize fees.
 						await TryOptimizeFeesAsync(transaction, spentCoins).ConfigureAwait(false);
