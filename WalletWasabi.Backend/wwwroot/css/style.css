@@ -237,6 +237,8 @@ header .navbar {
           transform: translateX(-50%);
   z-index: 999;
   width: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 header .navbar .nav-link {
