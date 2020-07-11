@@ -200,7 +200,7 @@ namespace WalletWasabi.Packager
 
 			IoHelpers.CopyFilesRecursively(new DirectoryInfo(dmgContentsDir), new DirectoryInfo(dmgPath));
 
-			File.Copy(Path.Combine(contentsPath, "WasabiLogo.icns"), Path.Combine(dmgPath, ".VolumeIcon.icns"), true);
+			File.Copy(Path.Combine(contentsPath, "MustardLogo.icns"), Path.Combine(dmgPath, ".VolumeIcon.icns"), true);
 
 			var temp = Path.Combine(dmgPath, ".DS_Store.dat");
 			File.Move(temp, Path.Combine(dmgPath, ".DS_Store"), true);
