@@ -33,7 +33,7 @@
     <!-- Define main app icon. -->
     <Icon
       Id="icon.ico"
-      SourceFile="$(var.WalletWasabi.Gui.ProjectDir)\Assets\WasabiLogo.ico" />
+      SourceFile="$(var.WalletWasabi.Gui.ProjectDir)\Assets\MustardLogo.ico" />
 
     <!-- Add/Remove programs: https://www.firegiant.com/wix/tutorial/com-expression-syntax-miscellanea/add-or-remove-programs-entries/ -->
     <!-- any comments -->

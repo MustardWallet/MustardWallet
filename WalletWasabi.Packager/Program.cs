@@ -580,7 +580,7 @@ namespace WalletWasabi.Packager
 
 				if (target.StartsWith("win"))
 				{
-					var icoPath = Path.Combine(GuiProjectDirectory, "Assets", "WasabiLogo.ico");
+					var icoPath = Path.Combine(GuiProjectDirectory, "Assets", "MustardLogo.ico");
 					using (var process = Process.Start(new ProcessStartInfo
 					{
 						FileName = "rcedit", // https://github.com/electron/rcedit/
@@ -692,7 +692,7 @@ namespace WalletWasabi.Packager
 
 					foreach (var file in assetsInfo.EnumerateFiles())
 					{
-						var number = file.Name.Split(new string[] { "WasabiLogo", ".png" }, StringSplitOptions.RemoveEmptyEntries);
+						var number = file.Name.Split(new string[] { "MustardLogo", ".png" }, StringSplitOptions.RemoveEmptyEntries);
 						if (number.Length == 1 && int.TryParse(number.First(), out int size))
 						{
 							string destFolder = Path.Combine(debUsrShareIconsFolderPath, $"{size}x{size}", "apps");

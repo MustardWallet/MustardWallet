@@ -7,7 +7,7 @@
 		<string>x86_64</string>
 	</array>
 	<key>CFBundleIconFile</key>
-	<string>WasabiLogo.icns</string>
+	<string>MustardLogo.icns</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
