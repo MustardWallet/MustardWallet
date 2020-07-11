@@ -270,7 +270,7 @@ section .shader {
   min-height: 100vh;
   height: 100%;
   width: 100%;
-  background-image: url("../images/mustard-plant-square.jpg?ver=1.1.0");
+  background-image: url("../images/mustard-varieties-square.jpg");
   background-size: cover;
   background-position: center;
 }
