@@ -3,6 +3,13 @@ How to use
 
 Use sha256sum to compute the SHA-256 Hash of your file and compare it with the ones below .
 
+Release v0.1.7.0
+----------------
+507afa6330a08a459505e9517135a4551fbbad2e915705eb5415f80f3db6d62e  MustardWalletLTC-0.1.7.0.msi
+0c57799512d53e44e3cc11f60dcecb03a1368bb13f75262a812e8d808648b282  MustardWalletLTC-0.1.7.deb
+b5da5cb821f53269e1c5e160845f91c227b4cb9c3d0b4823789c601df23f5e6a  MustardWalletLTC-linux-0.1.7.tar.gz
+ad7ccaa0d041163f81d9158e1b5ebe053fef32d1dc80915ec783adb15ff29638  MustardWalletLTC-osx-0.1.7.zip
+
 Release v0.1.6.0
 ----------------
 73624f01b5a62261d68a94b127e900d8e34822debde7f400fe98944666891634  MustardWalletLTC-0.1.6.0.msi
@@ -10,10 +17,8 @@ Release v0.1.6.0
 928e6fb9601aabee0e37573773bb8d4281d3160df4b32398049a2d18d10ce832  MustardWalletLTC-linux-0.1.6.tar.gz
 ab14c0022daa787541085094b396fb8e3af87023b62b64dac7052eb0544fb295  MustardWalletLTC-osx-0.1.6.zip
 
-
 Release v0.1.5.0
 ----------------
-
 f9f8699302396f5ad02d2dea63bc81ed965a03da10b462015307b9cce91f4017  MustardWalletLTC-0.1.5.0.msi
 b23a68ac99e783ecd62de9b3887ae3432d54478b5059c1df43c5fd3d8dc23683  MustardWalletLTC-0.1.5.deb
 187f1b99faf9f494d380c672cab0d75b17da4ac9172f95e349541711fb81faea  MustardWalletLTC-linux-0.1.5.tar.gz
