@@ -388,10 +388,10 @@ namespace WalletWasabi.CoinJoin.Coordinator.Rounds
 						// This check is dodgy for Litecoin LTC because its price is not $10k at all ...
 						if (coordinatorFee > Money.Coins(0.00003m))
 						{
-							Console.WriteLine("LTC DEBUG: adding coordinatorFee: " + coordinatorFee.ToString());
+							Logger.LogWarning("LTC DEBUG: adding coordinatorFee: " + coordinatorFee.ToString());
 							transaction.Outputs.AddWithOptimize(coordinatorFee, coordinatorScript);
 						} else {
-							Console.WriteLine("LTC DEBUG: NOT adding coordinatorFee: " + coordinatorFee.ToString());
+							Logger.LogWarning("LTC DEBUG: NOT adding coordinatorFee: " + coordinatorFee.ToString());
 						}
 
 						// 7. Try optimize fees.
