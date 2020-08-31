@@ -33,6 +33,15 @@
           "Newtonsoft.Json": "11.0.1"
         }
       },
+      "NBitcoin.Altcoins": {
+        "type": "Direct",
+        "requested": "[2.0.5.1, )",
+        "resolved": "2.0.5.1",
+        "contentHash": "IWf/72HZjReIO0KUf+33WsyRX43MFDnYCPoj+bsxlw8Ql/h07CM1SXRC9M0aGWoSaNvhvV2bn6Q+9D8pqmZFQQ==",
+        "dependencies": {
+          "NBitcoin": "5.0.13"
+        }
+      },
       "NBitcoin.Secp256k1": {
         "type": "Direct",
         "requested": "[1.0.3, )",
