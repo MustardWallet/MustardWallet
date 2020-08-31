@@ -67,7 +67,7 @@ namespace WalletWasabi.Gui
 
 		private static Global CreateGlobal()
 		{
-			string dataDir = EnvironmentHelpers.GetDataDir(Path.Combine("WalletWasabi", "Client"));
+			string dataDir = EnvironmentHelpers.GetDataDir(Path.Combine("MustardWalletLTC", "Client"));
 			Directory.CreateDirectory(dataDir);
 			string torLogsFile = Path.Combine(dataDir, "TorLogs.txt");
 
