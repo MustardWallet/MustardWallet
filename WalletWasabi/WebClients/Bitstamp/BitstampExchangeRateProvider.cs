@@ -13,7 +13,7 @@ namespace WalletWasabi.WebClients.Bitstamp
 		{
 			using var httpClient = new HttpClient();
 			httpClient.BaseAddress = new Uri("https://www.bitstamp.net");
-			using var response = await httpClient.GetAsync("/api/v2/ticker/btcusd");
+			using var response = await httpClient.GetAsync("/api/v2/ticker/ltcusd");
 			using var content = response.Content;
 			var rate = await content.ReadAsJsonAsync<BitstampExchangeRate>();
 

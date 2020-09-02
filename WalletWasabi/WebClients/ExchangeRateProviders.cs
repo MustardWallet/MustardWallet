@@ -21,12 +21,12 @@ namespace WalletWasabi.WebClients
 		private readonly IExchangeRateProvider[] ExchangeRateProviders =
 		{
 			// No LTC ? new BlockchainInfoExchangeRateProvider(),
-			// TODO: check for LTC: new BitstampExchangeRateProvider(),
-			// TODO: check for LTC: new CoinGeckoExchangeRateProvider(),
+			new BitstampExchangeRateProvider(),
+			new CoinGeckoExchangeRateProvider(),
 			new CoinbaseExchangeRateProvider(),
-			new GeminiExchangeRateProvider()
-			// No LTC? new ItBitExchangeRateProvider(),
-			// No LTC? new SmartBitExchangeRateProvider(new SmartBitClient(Network.Main))
+			new GeminiExchangeRateProvider(),
+			new ItBitExchangeRateProvider()
+			// No LTC ? new SmartBitExchangeRateProvider(new SmartBitClient(Network.Main))
 		};
 
 		public async Task<IEnumerable<ExchangeRate>> GetExchangeRateAsync()

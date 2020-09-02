@@ -13,7 +13,7 @@ namespace WalletWasabi.WebClients.CoinGecko
 		{
 			using var httpClient = new HttpClient();
 			httpClient.BaseAddress = new Uri("https://api.coingecko.com");
-			using var response = await httpClient.GetAsync("/api/v3/coins/markets?vs_currency=usd&ids=bitcoin");
+			using var response = await httpClient.GetAsync("/api/v3/coins/markets?vs_currency=usd&ids=litecoin");
 			using var content = response.Content;
 			var rates = await content.ReadAsJsonAsync<CoinGeckoExchangeRate[]>();
 
