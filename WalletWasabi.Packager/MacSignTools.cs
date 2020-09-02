@@ -434,7 +434,7 @@ namespace WalletWasabi.Packager
 			});
 			process.WaitForExit();
 			string result = process.StandardError.ReadToEnd();
-			if (!result.Contains("Authority=Developer ID Application: MustardWallet"))
+			if (!result.Contains("Authority=Developer ID Application: Mustard Wallet Team"))
 			{
 				throw new InvalidOperationException(result);
 			}
